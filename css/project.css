@@ -76,6 +76,7 @@ h1, h2, h3, h4 {
 	height: calc(var(--index) * var(--side-big));
 	background-position: top;
 	background-size: cover;
+	border-radius: 8px;
 }
 .frame-media_left {
 	right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));

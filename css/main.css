@@ -41,15 +41,15 @@ body {
 .main-header {
 	height: 100vh;
 }
-.main-header a {
-	color: #fafafa;
-	transition: 1.5s linear;
-}
-.main-header a:hover {
-	color: #fbeeb9d0;
-}
 .container {
 	padding: 0 7vw;
+}
+.container a {
+	color: #ffffff;
+	transition: 1s linear;
+}
+.container a:hover {
+	color: #ffffffd0;
 }
 .main-title {
 	font-size: calc(var(--index) * 8);
