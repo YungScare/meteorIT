@@ -20,6 +20,78 @@
 /* h1, h2, h3, h4, h5, h6 {
 	font-family: outfit-c;
 } */
+
+/* Стили для навигации */
+.main-nav {
+    position: fixed; /* Фиксируем навигацию вверху */
+	top: 3vh;
+	left: 7vh;
+	width: 100%;
+	background-color: transparent; /* Прозрачный фон */
+	padding: calc(var(--index) * 0.5) 0; /* Отступы сверху и снизу */
+	z-index: 100; /* Обеспечиваем отображение над другими элементами */
+	letter-spacing: 0.1em; /* Увеличивает расстояние между буквами на 0.1em */
+}
+
+.main-nav .container {
+    display: flex;
+	align-items: center;
+}
+
+.main-nav .container .logo{
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-right: 12%;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 50px;
+}
+
+.main-nav .nav-points {
+    text-decoration: none;
+    color: var(--color-header);
+	font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Стили для заголовка */
+.main-header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /*  Выравниваем текст слева */
+}
+
+.container {
+    padding: 0 7vw;
+}
+
+.container a {
+    color: var(--color-header);
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: 1s linear;
+}
+
+.container a:hover {color: #ffffffd0;
+}
+
+/*  Размещаем заголовок слева, как на макете */
+.main-title {
+    font-size: calc(var(--index) * 4); /* Меньше размер, чем был */
+    position: relative; /*  Относительное позиционирование */
+    width: auto;  /* Автоматическая ширина */
+	left: 40vh;
+    bottom: auto; /* Убираем привязку ко дну */
+    line-height: 1.2;
+    margin-top: 20vh; /*  Сдвигаем вниз */
+}
+
 /* will-change */
 .content, .hero, .main-header, .gallery > * {
 	will-change: transform;
@@ -32,12 +104,30 @@ body {
 	overflow-x: hidden;
 }
 .hero {
-	width: calc(var(--index) * 36);
+	width: calc(var(--index) * 30);
 	position: absolute;
-	left: 37vw;
+	left: 45vw;
 	top: 22vh;
 	z-index: -1;
 }
+
+/* Стили для hero-text (текст на главной странице) */
+.hero-text {
+    position: absolute;
+    top: 10%;
+    left: 7vw;
+    transform: translateY(-50%);
+    color: var(--color-header);
+    font-size: calc(var(--index) * 3);
+    line-height: 1.2;
+    max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0.05em; /* Увеличивает расстояние между буквами на 0.1em */
+}
+
 .main-header {
 	height: 100vh;
 }
@@ -52,12 +142,196 @@ body {
 	color: #ffffffd0;
 }
 .main-title {
-	font-size: calc(var(--index) * 8);
+	font-size: calc(var(--index) * 5);
 	position: absolute;
 	width: min-content;
 	bottom: 12vh;
 	line-height: .9;
 }
+
+/* MISSION START */
+.mission {
+    color: var(--color-text);
+    padding: calc(var(--index) * 8) 0; /* Отступы как в галерее */
+    overflow: hidden; /* Скрываем контент, выходящий за пределы блока */
+}
+
+.mission__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Размещаем текст и изображение по краям */
+}
+
+.mission__text {
+    max-width: 50%; /* Занимает половину ширины */
+    padding-right: calc(var(--index) * 4);
+}
+
+.mission__title {
+    font-size: 4rem;
+    line-height: 1.2;
+    color: var(--color-header);
+    margin-bottom: calc(var(--index) * 2);
+}
+
+.mission__description {
+    font-size: 3rem;
+	line-height: 1.4;
+    white-space: pre-line; /* Для сохранения переносов строк */
+}
+
+.mission__image {
+    text-align: right; /* Выравниваем изображение по правому краю */
+}
+
+.mission__image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.mission__binary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%; /* Занимает 40% ширины */
+    height: 100%;
+    z-index: 0; /* Размещаем под текстом и изображением */
+    opacity: 0.3; /* Делаем полупрозрачным */
+    overflow: hidden; /* Скрываем часть кода, выходящую за пределы блока */
+}
+
+.mission__binary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняем контейнер, обрезая изображение, если необходимо */
+    filter: grayscale(100%);
+}
+
+/* Добавим анимацию параллакса для космонавта */
+.mission__image img {
+    transform: translateY(50px); /* Начальное положение смещено вниз */
+    transition: transform 0.5s ease-out; /* Плавная анимация */
+}
+
+/* Добавим класс для активации анимации (используем JavaScript) */
+.mission__image img.active {
+    transform: translateY(0); /* Конечная позиция вверху */
+}
+/* MISSION END */
+
+/* SERVICES START */
+
+.services {
+    padding: calc(var(--index) * 4) 0;
+    color: var(--color-text);
+}
+
+.services__title {
+    font-size: 3rem;
+    color: var(--color-header);
+    text-align: center;
+    margin-bottom: calc(var(--index) * 2);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(var(--index) * 2);
+    align-items: start; /*  Важно! Выравниваем элементы по верху сетки */
+}
+
+.services__item.step-1 {
+  transform: translateY(0);
+}
+
+.services__item.step-2 {
+  transform: translateY(120px); /*  Сдвигаем вниз */
+}
+
+.services__item.step-3 {
+  transform: translateY(0px); /* Сдвигаем вниз еще больше */
+}
+
+.services__item.step-4 {
+  transform: translateY(120px); /* Сдвигаем вниз еще больше */
+}
+
+.services__item {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавили transition для box-shadow */
+    width: 18vw;
+    height: 25vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+.services__item:hover {
+    /* transform: translateY(-30px); */
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.8); /* Увеличиваем радиус и прозрачность */
+}
+
+/* Обводка */
+.services__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(200, 200, 200, 0); /* Светло-серый цвет с прозрачностью 0 */
+    border-radius: 10px;
+    transition: border-color 0.3s ease; /* Плавное появление обводки */
+    z-index: 3; /* Обводка поверх всего, кроме контента */
+    box-sizing: border-box; /* Чтобы обводка не увеличивала размер блока */
+}
+
+.services__item:hover::before {
+    border-color: rgba(200, 200, 200, 0.2); /* Светло-серый цвет с прозрачностью 0.8 при наведении */
+}
+
+.services__item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.8);
+}
+
+.services__item-content {
+    position: relative;
+    z-index: 2;
+    padding: calc(var(--index) * 1);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.services__item-title {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--index) * 0.5);
+}
+
+.services__item-description {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* SERVICES END */
+
 .gallery {
 	display: flex;
 	padding: calc(var(--index) * 8) 0;
@@ -69,7 +343,7 @@ body {
 	flex-direction: column;
 }
 .gallery__item {
-	max-width: calc(var(--index) * 21);
+	max-width: calc(var(--index) * 16);
 	margin-bottom: var(--gallery-gap);
 	max-height: 180vh;
 	border-radius: 8px;
@@ -86,12 +360,166 @@ body {
 	position: relative;
 }
 .text-block__h {
-	font-size: 3.5rem;
-	line-height: 2.4rem;
+	font-size: 3rem;
+	line-height: 4rem;
 	color: var(--color-header);
-	margin-bottom: 1.5rem;
+	/* margin-bottom: 1.5rem; */
 }
 .text-block__p {
 	line-height: 1.25;
 	font-size: 1.5rem;
 }
+
+/* CTA SECTION */
+.cta-section {
+    background-color: #000;
+    padding: calc(var(--index) * 4) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content h2 {
+    color: var(--color-header);
+    font-size: 3rem;
+    margin-bottom: calc(var(--index) * 2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: calc(var(--index) * 0.75) calc(var(--index) * 2);
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #777777;
+}
+
+.cta-meteorite {
+ width: calc(var(--index) * 6);
+ position: absolute;
+ left: 0vw;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 1;
+ opacity: 0.9;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #000;
+    color: var(--color-text);
+    padding: calc(var(--index) * 2) 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.footer-left, .footer-center, .footer-right {
+    text-align: left;
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-header);
+    text-decoration: none;
+}
+
+.footer-center {
+    font-size: 2.5rem;
+}
+
+.footer-right {
+    font-size: 2.5rem;
+}
+
+.footer-center p {
+    margin: 0;
+}
+
+.footer-center a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.footer-center .phone_number {
+    font-family: outfit-c; /* Или другой шрифт с фиксированной шириной */
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-social a {
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-nav .footer-button {
+    margin-left: 10vh;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--color-header);
+    font-weight: bold;
+}
+
+/* Ползунок (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #1f1f1f;  /* Цвет ползунка */
+    border-radius: 10px;   /* Скругление углов */
+    border: 2px solid transparent; /* Добавляем обводку */
+    background-clip: padding-box; /* Обрезаем фон под обводкой */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;  /* Цвет ползунка при наведении */
+}
+
+/* Трек (track) */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Цвет трека */
+    border-radius: 10px;   /* Скругление углов */
+}
+
+/* Углы */
+::-webkit-scrollbar-corner {
+    background-color: transparent; /* Цвет углов */
+}
+
+/* Кнопки (arrows) */
+::-webkit-scrollbar-button {
+    display: none; /* Скрываем кнопки */
+}
+
+/* Ширина скроллбара */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина скроллбара */
+}
+    
+

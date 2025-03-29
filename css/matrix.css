@@ -1,0 +1,28 @@
+#matrixContainer {
+    position: relative; /* Важно для позиционирования canvas */
+    width: 35%; /* или любая другая ширина */
+    height: 37vh; /* или любая другая высота */
+  }
+  
+  .matrixCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Оба канваса меньше по размеру */
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+  }
+  
+  .matrixCanvas--main {
+    left: -5%;
+    top: 30%;
+    z-index: 1; /* Главный канвас под вторым */
+  }
+  
+  /* Стили для второго canvas (настраивайте по своему вкусу) */
+  .matrixCanvas--overlay {
+    left: 10.5vh; /* Сдвиг вправо */
+    top: 1.5%; /* Сдвиг вверх */
+    opacity: 0.8; /* Прозрачность */
+    z-index: 2; /* Второй canvas поверх первого */
+  }
