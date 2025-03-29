@@ -72,7 +72,7 @@
 
 .modal__form {
     padding-left: calc(var(--index) * 2); /* Отступ слева */
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .form__group {
