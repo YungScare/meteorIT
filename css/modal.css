@@ -91,10 +91,10 @@
     width: 100%;
     padding: calc(var(--index) * 0.25) 0; /* Уменьшаем вертикальный отступ */
     border: none; /* Убираем рамку */
-    border-bottom: 2px solid #aaaaaa; /* Добавляем нижнюю границу */
+    border-bottom: 1px solid #aaaaaa; /* Добавляем нижнюю границу */
     border-radius: 0; /* Убираем скругление углов */
-    font-size: 1.2rem;
-    transition: border-color 0.2s ease;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
     background-color: transparent; /* Делаем фон прозрачным */
     color: #333; /* Ensure the text is visible */
 }
