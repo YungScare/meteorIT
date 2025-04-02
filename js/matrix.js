@@ -1,113 +1,168 @@
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
 
-const canvas2 = document.getElementById('matrixCanvas2');
-const ctx2 = canvas2.getContext('2d');
+const svg = document.getElementById('matrix-svg');
+const matrixContainer = document.getElementById('matrix-container');
+const matrixGroup = document.getElementById('matrix-group');
+const textElement = document.getElementById('matrix-text');
+const characters = "01";
+let animationInterval;
+let starInterval; // Интервал для создания звезд
+let firstHover = true; // Флаг для первого наведения
 
-if (!ctx || !ctx2) {
-    console.error("Canvas не поддерживается.");
-}
-
-const container = document.getElementById('matrixContainer');
-let canvasWidth = container.offsetWidth;
-let canvasHeight = container.offsetHeight;
-
-function setCanvasSize() {
-    canvasWidth = container.offsetWidth;
-    canvasHeight = container.offsetHeight;
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-    canvas2.width = canvasWidth;
-    canvas2.height = canvasHeight;
-}
-
-setCanvasSize();
-
-window.addEventListener('resize', setCanvasSize);
+const containerWidth = matrixContainer.clientWidth;
+const containerHeight = matrixContainer.clientHeight;
 
 const fontSize = 20;
-const columns = canvasWidth / fontSize;
-const drops = [];
+const columns = Math.floor(containerWidth / fontSize);
+const rows = Math.floor(containerHeight / fontSize);
 
-for (let i = 0; i < columns; i++) {
-    drops[i] = Math.random() * canvasHeight;
+const starBaseSize = 40;
+const starSizeVariation = 20;
+const starFallSpeedBase = 15;
+const starFallSpeedVariation = 13;
+
+// Функция для создания одного символа матрицы
+function createMatrixCharacter(x, y, initialContent) {
+    const char = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    char.setAttribute("x", x);
+    char.setAttribute("y", y);
+    char.setAttribute("class", "matrix-char");
+    char.textContent = initialContent;
+    return char;
 }
 
-const characters = "01";
-const matrixColor = '#fff';
-const word = "meteorIT"; // Слово для вставки в матрицу
-let wordIndex = 0;     // Индекс текущей буквы в слове
-let isHovered = false;  // Флаг, показывающий, наведен ли курсор на контейнер
+// Функция для создания звезды (теперь изображение)
+function createStar() {
+    const star = document.createElement("img");
 
-function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    // Случайная траектория (0 - справа налево, 1 - слева направо)
+    star.dataset.trajectory = Math.floor(Math.random() * 2);
 
-    ctx.fillStyle = matrixColor;
-    ctx.font = fontSize + 'px monospace';
+    // Выбор изображения и начальной позиции в зависимости от траектории
+    if (star.dataset.trajectory === "0") {
+        star.src = "img/main/Meteor.png"; // Путь к изображению для траектории справа налево
+        // Начальная позиция - правый верхний угол
+        star.dataset.startX = containerWidth; // Сохраняем начальную позицию X
+        star.dataset.startY = 0; // Сохраняем начальную позицию Y
+    } else {
+        star.src = "img/main/Meteor_mirrored.png"; // Путь к изображению для траектории слева направо (замените!)
+        // Начальная позиция - левый верхний угол
+        star.dataset.startX = 0; // Сохраняем начальную позицию X
+        star.dataset.startY = 0; // Сохраняем начальную позицию Y
+    }
 
-    for (let i = 0; i < drops.length; i++) {
-        let text;
-        if (isHovered) { // Если курсор наведен, отображаем только слово
-            text = word[wordIndex];
-            wordIndex = (wordIndex + 1) % word.length;
-        } else { // Если курсор не наведен, отображаем только случайные символы
-            text = characters.charAt(Math.floor(Math.random() * characters.length));
+    star.style.position = "absolute";
+    const width = starBaseSize + Math.random() * starSizeVariation;
+    star.style.width = width + "px";
+    star.style.height = "auto";
+
+    star.style.left = star.dataset.startX + "px"; // Устанавливаем начальную позицию из data-атрибута
+    star.style.top = star.dataset.startY + "px";   // Устанавливаем начальную позицию из data-атрибута
+
+    star.classList.add("star");
+    star.dataset.speed = starFallSpeedBase + Math.random() * starFallSpeedVariation;
+    matrixContainer.appendChild(star);
+    return star;
+}
+
+// Функция для первоначального заполнения матрицы статичными символами
+function populateMatrix() {
+    matrixGroup.innerHTML = '';
+    for (let i = 0; i < columns; i++) {
+        for (let j = 0; j < rows; j++) {
+            const x = i * fontSize;
+            const y = j * fontSize;
+            // Генерируем случайный символ для начального состояния
+            const initialContent = characters.charAt(Math.floor(Math.random() * characters.length));
+            const char = createMatrixCharacter(x, y, initialContent);
+            matrixGroup.appendChild(char);
         }
-
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvasHeight && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i] ++;
     }
 }
 
-function draw2() {
-    ctx2.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx2.fillRect(0, 0, canvasWidth, canvasHeight);
+// Функция для анимации матрицы (изменение символов)
+function animateMatrix() {
+    const chars = matrixGroup.querySelectorAll('.matrix-char');
+    chars.forEach(char => {
+        char.textContent = characters.charAt(Math.floor(Math.random() * characters.length));
+    });
 
-    ctx2.fillStyle = matrixColor;
-    ctx2.font = fontSize + 'px monospace';
+    // Анимация звезд
+    const stars = matrixContainer.querySelectorAll('.star');
+    stars.forEach(star => {
+        let x = parseFloat(star.style.left);
+        let y = parseFloat(star.style.top);
+        const speed = parseFloat(star.dataset.speed);
+        const trajectory = parseInt(star.dataset.trajectory);
 
-    for (let i = 0; i < drops.length; i++) {
-        let text;
-        if (isHovered) { // Если курсор наведен, отображаем только слово
-            text = word[wordIndex];
-            wordIndex = (wordIndex + 1) % word.length;
-        } else { // Если курсор не наведен, отображаем только случайные символы
-            text = characters.charAt(Math.floor(Math.random() * characters.length));
+        let angle;
+        let targetX, targetY;
+
+        if (trajectory === 0) {
+            // Траектория справа налево
+            targetX = 0;
+            targetY = containerHeight;
+        } else {
+            // Траектория слева направо
+            targetX = containerWidth;
+            targetY = containerHeight;
         }
 
-        ctx2.fillText(text, i * fontSize, drops[i] * fontSize);
+        angle = Math.atan2(targetY - y, targetX - x);
 
-        if (drops[i] * fontSize > canvasHeight && Math.random() > 0.975) {
-            drops[i] = 0;
+        const dx = Math.cos(angle) * speed;
+        const dy = Math.sin(angle) * speed;
+
+        x += dx;
+        y += dy;
+
+        star.style.left = x + "px";
+        star.style.top = y + "px";
+
+        // Получаем ширину звезды
+        const starWidth = parseFloat(star.style.width);
+
+        // Если звезда полностью ушла за пределы контейнера
+        if (trajectory === 0 && x + starWidth < 0 && y > containerHeight) {
+            star.remove();
+        } else if (trajectory === 1 && x > containerWidth && y > containerHeight) {
+            star.remove();
         }
-        drops[i] ++;
+    });
+}
+
+// Функция для создания звезд с интервалом
+function startStarInterval() {
+    starInterval = setInterval(() => {
+        createStar();
+    }, Math.random() * (15000 - 5000) + 5000); // Интервал от 5 до 15 секунд
+}
+
+// Функция для запуска анимации
+function startAnimation() {
+    if (firstHover) {
+        createStar();
+        firstHover = false;
     }
+    startStarInterval();
+    animationInterval = setInterval(animateMatrix, 50);
+    textElement.classList.add("highlight-text");
+    matrixContainer.classList.add("highlight-container");
 }
 
-function matrixAnimation() {
-    draw();
-    requestAnimationFrame(matrixAnimation);
+// Функция для остановки анимации
+function stopAnimation() {
+    clearInterval(animationInterval);
+    clearInterval(starInterval);
+    textElement.classList.remove("highlight-text");
+    matrixContainer.classList.remove("highlight-container");
+
+    const stars = matrixContainer.querySelectorAll('.star');
+    stars.forEach(star => star.remove());
 }
 
-function matrixAnimation2() {
-    draw2();
-    requestAnimationFrame(matrixAnimation2);
-}
+// Первоначальное заполнение матрицы статичными символами
+populateMatrix();
 
-matrixAnimation();
-matrixAnimation2();
-
-// --- Обработчики событий наведения мыши ---
-container.addEventListener('mouseenter', () => {
-    isHovered = true; // Устанавливаем флаг при наведении
-});
-
-container.addEventListener('mouseleave', () => {
-    isHovered = false; // Сбрасываем флаг при уходе курсора
-});
-
+// Обработчики событий для наведения и ухода мыши
+matrixContainer.addEventListener("mouseenter", startAnimation);
+matrixContainer.addEventListener("mouseleave", stopAnimation);
