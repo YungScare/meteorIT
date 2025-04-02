@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 
 	<meta charset="UTF-8">
@@ -45,13 +45,21 @@
 			<section class="mission">
 				<div class="container">
 				  <div class="mission__content">
-					<div id="matrixContainer">
-						<canvas id="matrixCanvas" class="matrixCanvas matrixCanvas--main"></canvas>
-						<canvas id="matrixCanvas2" class="matrixCanvas matrixCanvas--overlay"></canvas>
+					<div id="matrix-container">
+						<svg id="matrix-svg" viewBox="0 0 600 400">
+							<defs>
+								<mask id="textMask">
+									<text id="matrix-text" x="50%" y="60%" dominant-baseline="middle" text-anchor="middle">IT</text>
+								</mask>
+							</defs>
+							<g id="matrix-group" mask="url(#textMask)">
+								<!-- Символы матрицы будут добавлены сюда -->
+							</g>
+						</svg>
 					</div>
 					<div class="mission__text">
 					  <h2 class="mission__title">Наша миссия</h2>
-					  <p class="mission__description">Вдохновляем мир продуктами, <br> состоящими <br> из нуля и единиц</p>
+					  <p class="mission__description">Вдохновляем <br> мир продуктами, <br> состоящими из нуля и единиц</p>
 					</div>
 				  </div>
 				  <div class="mission__image">
