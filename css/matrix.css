@@ -1,28 +1,45 @@
-#matrixContainer {
-    position: relative; /* Важно для позиционирования canvas */
-    width: 35%; /* или любая другая ширина */
-    height: 37vh; /* или любая другая высота */
-  }
-  
-  .matrixCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Оба канваса меньше по размеру */
-    height: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
-  }
-  
-  .matrixCanvas--main {
-    left: -5%;
-    top: 30%;
-    z-index: 1; /* Главный канвас под вторым */
-  }
-  
-  /* Стили для второго canvas (настраивайте по своему вкусу) */
-  .matrixCanvas--overlay {
-    left: 10.5vh; /* Сдвиг вправо */
-    top: 1.5%; /* Сдвиг вверх */
-    opacity: 0.8; /* Прозрачность */
-    z-index: 2; /* Второй canvas поверх первого */
-  }
+#matrix-container {
+  position: relative; /*  Убедитесь, что контейнер имеет относительное позиционирование */
+  overflow: hidden; /*  Чтобы звезды не выходили за границы контейнера */
+  width: 40vw; /* или любая другая ширина */
+  height: 60vh; /* или любая другая высота */
+  transition: box-shadow 0.3s ease; /* Плавный переход для эффекта подсветки */
+}
+
+#matrix-container.highlight-container {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Подсветка контейнера (зеленая тень) */
+}
+
+#matrix-svg {
+  width: 90%;
+  height: 100%;
+}
+
+#matrix-text {
+  font-size: 45vh;
+  font-weight: bold;
+  fill: white; /* Цвет текста маски */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Или другой шрифт */
+  transition: fill 0.3s ease; /* Плавный переход для эффекта подсветки текста */
+}
+
+#matrix-text.highlight-text {
+  fill: rgb(255, 255, 255); /* Подсветка текста (желтый цвет) */
+}
+
+.matrix-char {
+  font-size: 15px; /* Размер символов матрицы */
+  font-family: monospace; /* Моноширинный шрифт */
+  fill: rgb(255, 255, 255); /* Цвет символов матрицы */
+}
+
+.star {
+  position: absolute;
+  pointer-events: none;
+  /* Добавим transition для плавности (по желанию) */
+  transition: left 0.1s linear, top 0.1s linear;
+}
+
+.star-smooth {
+  transition: left 0.3s linear, top 0.3s linear;
+}
