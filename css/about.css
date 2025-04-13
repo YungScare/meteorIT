@@ -1,0 +1,256 @@
+/* BLOCK #1 */
+.container-block-1 {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  padding: 7%;
+}
+  
+.left-side {
+  flex: 0.8;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;        /* Use flexbox within the right-side for layout */
+  flex-direction: column; /* Stack the text and the cursor vertically */
+  align-items: flex-start;  /* Align items to the left side */
+  margin-top: 20%;
+
+}
+
+.question {
+  font-size: 2.2em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 10%;
+  letter-spacing: 0.05em; /* Added letter-spacing */
+}
+
+.description {
+  font-size: 2.2em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1%;
+  letter-spacing: 0.05em; /* Added letter-spacing */
+}
+
+.office-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.cursor-image {
+  width: 15vw;
+  align-self: flex-end;  /* Position cursor to the right (horizontally) */
+}
+/* BLOCK #1 END */
+
+/* BLOCK #2 */
+
+/* CSS */
+.container-block-2 {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 7%;
+}
+
+.left-side-block-2 {
+  flex: 1;
+  position: relative; /* Needed for positioning the circle */
+}
+
+.right-side-block-2 {
+  flex: 1;
+}
+
+.advantage, .question-block-2 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  margin-bottom: 10%;
+}
+
+.optimization-text {
+  font-size: 1.2em;     /* Adjust text size */
+  text-align: center;
+}
+
+.image-wrapper {
+  position: relative; /* Containing block for the arrow */
+}
+
+.team-image {
+  width: 35vw;
+  border-radius: 10px;
+}
+
+.arrow-image {
+  width: 200px; /* Adjust arrow size */
+  position: absolute;
+  top: -35%; /* Adjust position above image */
+  left: -5%; /* Center horizontally */
+  transform: translateX(-50%); /* Correct centering */
+  transform: translateX(-50%) rotate(-15deg); /* Rotate the arrow */
+}
+
+/* BLOCK #2 END */
+
+/* BLOCK #3 */
+
+.container-block-3 {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 7%;
+}
+
+.left-side-block-3 {
+  flex: 1.2;
+}
+
+.right-side-block-3 {
+  flex: 1;
+}
+
+.question-block-3 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin-bottom: 5%;
+}
+
+.mission-block-3 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.robot-image {
+  width: 70%;
+  border-radius: 10px;
+}
+
+/* BLOCK #3 END */
+
+/* BLOCK #4 */
+
+.container-block-4 {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 7%;
+}
+
+.left-side-block-4 {
+  flex: 1;
+}
+
+.right-side-block-4 {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-block-4 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin-bottom: 5%;
+}
+
+.mission-block-4 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin-left: 5%;
+}
+
+.loading-image {
+  width: 30%;
+  margin-left: -15%;
+  margin-bottom: -10%;
+}
+
+.background-image {
+  width: 80%;
+  border-radius: 10px;
+  margin-top: auto; /* Push the image to the bottom */
+}
+
+/* BLOCK #4 END */
+
+/* BLOCK #5 */
+
+.container-block-5 {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 7%;
+}
+
+.left-side-block-5 {
+  flex: 1;
+}
+
+.right-side-block-5 {
+  flex: 1;
+  position: relative; /* Needed for absolute positioning of the arrow */
+}
+
+.title-block-5 {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 5%;
+  font-family: Arial, sans-serif; /* Примерный шрифт, как на картинке */
+}
+
+.values-block-5 {
+  font-size: 2em;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.question-block-5 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin-bottom: 5%;
+}
+
+.arrow-image-block-5 {
+  width: 30%; /* Adjust arrow size as needed */
+  position: absolute;
+  top: 10%;    /* Adjust vertical position */
+  right: 0;   /* Align to the right */
+  transform: rotate(-355deg);
+}
+
+.do-something-great-image {
+  width: 70%; /* Adjust size as needed */
+  left: 0;   /* Align to the left */
+}
+
+.title-image-block-5 {
+  width: 60%; /* Adjust width as needed */
+  margin-bottom: 5%;
+}
+
+
+
+/* BLOCK #5 END */
