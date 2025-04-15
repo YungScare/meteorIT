@@ -30,22 +30,31 @@ body::-webkit-scrollbar {
 	src: url(../fonts/raleway-v22-cyrillic-100.woff2);
 	font-weight: 100;
 }
+
+.hero-section {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+.hero-section--hidden {
+    transform: translateY(-100%); /* Hide the header above the viewport */
+}
+
 body {
-	background-color: #000;
+	/* background-color: #000;
 	color: #fff;
 	font-size: calc(var(--index) * .8);
 	font-family: raleway_c, sans-serif;
-	line-height: 1.75;
+	line-height: 1.75; */
 	height: var(--depth);
-	font-weight: 300;
+	/* font-weight: 300; */
 }
-.container {
+.project-container {
 	width: 100%;
 	height: 100%;
 	position: fixed;
 	perspective: 1500px;
 }
-.gallery {
+.project-gallery {
 	transform-style: preserve-3d;
 	height: 100%;
 }

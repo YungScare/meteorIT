@@ -35,7 +35,9 @@
 
 .main-nav .container {
     display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
 	align-items: center;
+    max-width: 100%; /* Ограничивает ширину контента */
 }
 
 .main-nav .container .logo{
@@ -56,8 +58,55 @@
 .main-nav .nav-points {
     text-decoration: none;
     color: var(--color-header);
-	font-weight: bold;
+	font-weight: 300;
     font-size: 1.2rem;
+    margin-left: -30%;
+}
+
+.nav-points li a {
+    position: relative; /*  Важно для позиционирования псевдоэлемента */
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-points li a:hover {
+    color: #ffffff; /*  Цвет при наведении */
+}
+
+.nav-points li a::after {
+    content: ''; /*  Обязательно для псевдоэлемента */
+    position: absolute;
+    bottom: -2px; /* Располагаем линию под текстом (немного ниже) */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Толщина линии */
+    background-color: #fff; /* Цвет линии */
+    transform: scaleX(0); /* Изначально линия не видна */
+    transform-origin: left; /* Точка начала анимации (слева) */
+    transition: transform 0.3s ease-in-out; /* Плавная анимация */
+}
+
+.nav-points li a:hover::after {
+    transform: scaleX(1); /* Делаем линию видимой при наведении */
+}
+
+
+.main-nav .nav-button {
+    background-color: #fff; /* Белый фон */
+    color: #000; /* Черный текст */
+    padding: 10px 20px;
+    border-radius: 5px; /* Закругленные углы */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+    margin-right: 10%; /* Убираем отступ справа */
+}
+
+.main-nav .nav-button:hover {
+    background-color: #777777; /* Более светлый фон при наведении */
+    color: #000;
 }
 
 /* Стили для заголовка */
@@ -261,7 +310,7 @@ body {
     background-color: #1a1a1a;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавили transition для box-shadow */
     width: 18vw;
     height: 25vw;
@@ -276,7 +325,7 @@ body {
 
 .services__item:hover {
     /* transform: translateY(-30px); */
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); /* Увеличиваем радиус и прозрачность */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Увеличиваем радиус и прозрачность */
 }
 
 /* Обводка */
@@ -401,7 +450,7 @@ body {
 }
 
 .cta-meteorite {
- width: calc(var(--index) * 6);
+ width: calc(var(--index) * 4);
  position: absolute;
  left: 0vw;
  top: 50%;
