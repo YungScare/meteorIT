@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
-    const ctaButton = document.querySelector('.cta-button'); // Селектор кнопки
+    const navButton = document.querySelector('.nav-button'); // Кнопка в шапке
+    const ctaButton = document.querySelector('.cta-button'); // Основная кнопка
     const closeButton = document.querySelector('.modal__close');
 
-    // Открытие модального окна
-    ctaButton.addEventListener('click', function(event) {
+    // Функция для открытия модального окна (чтобы избежать дублирования кода)
+    function openModal(event) {
         event.preventDefault(); // Предотвращаем переход по ссылке
 
         // Предварительно устанавливаем стили для анимации открытия
@@ -19,7 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.transform = 'translateY(0)';
         });
         ScrollSmoother.get().paused(true); //pause scrollSmoother
-    });
+    }
+
+    // Обработка кнопки в шапке
+    navButton.addEventListener('click', openModal);
+
+    // Обработка предыдущей кнопки (если есть)
+    if (ctaButton) { // Проверяем, существует ли элемент ctaButton
+        ctaButton.addEventListener('click', openModal);
+    }
 
     // Закрытие модального окна по клику на крестик
     closeButton.addEventListener('click', function() {
