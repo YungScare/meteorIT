@@ -4,6 +4,12 @@ const header = document.querySelector('.hero-section');
 // Ссылка на начало блока с проектами (галереей)
 const projectContainer = document.querySelector('.project-container');
 
+// Ссылка на блок с заголовком "Проекты"
+const projectsTitleFrame = document.querySelector('.frame:nth-child(1)'); // Выбираем первый frame
+
+// Получаем все фреймы, кроме projectsTitleFrame
+const otherFrames = Array.from(document.querySelectorAll('.frame')).filter(frame => frame !== projectsTitleFrame);
+
 let lastScrollTop = 0; //  Переменная для хранения предыдущей позиции прокрутки
 
 // Функция для определения, находится ли элемент в видимой области экрана
@@ -21,13 +27,21 @@ function isElementInViewport(el) {
 function handleScroll() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Если прокрутили вниз и шапка видна
-    if (scrollTop > lastScrollTop && !header.classList.contains('hero-section--hidden')) {
-        header.classList.add('hero-section--hidden'); // Скрываем шапку
+    // По умолчанию показываем шапку
+    header.classList.remove('hero-section--hidden');
+
+    // Проверяем, виден ли какой-либо другой фрейм
+    for (const frame of otherFrames) {
+        if (isElementInViewport(frame)) {
+            // Если виден хотя бы один другой фрейм, скрываем шапку
+            header.classList.add('hero-section--hidden');
+            break; // Выходим из цикла, т.к. достаточно одного видимого фрейма
+        }
     }
-    // Если прокрутили вверх и шапка не видна
-    else if (scrollTop < lastScrollTop && header.classList.contains('hero-section--hidden')) {
-        header.classList.remove('hero-section--hidden'); // Показываем шапку
+
+    // Если дошли до верха страницы, показываем шапку
+    if (scrollTop === 0) {
+        header.classList.remove('hero-section--hidden');
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
