@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
-    const navButton = document.querySelector('.nav-button'); // Кнопка в шапке
-    const ctaButton = document.querySelector('.cta-button'); // Основная кнопка
+    const navButton = document.querySelector('.nav-button'); // Кнопка заявки в шапке
+    const burgerButton = document.querySelector('.burger-button'); // Кнопка заявки в бургер меню
+    const ctaButton = document.querySelector('.cta-button'); // Основная заявки кнопка
     const closeButton = document.querySelector('.modal__close');
 
     // Функция для открытия модального окна (чтобы избежать дублирования кода)
@@ -19,13 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.opacity = 1;
             modal.style.transform = 'translateY(0)';
         });
-        ScrollSmoother.get().paused(true); //pause scrollSmoother
+        //ScrollSmoother.get().paused(true); //pause scrollSmoother
     }
 
     // Обработка кнопки в шапке
     navButton.addEventListener('click', openModal);
 
-    // Обработка предыдущей кнопки (если есть)
+    // Обработка burgerButton кнопки (если есть)
+    if (burgerButton) { // Проверяем, существует ли элемент burgerButton
+        burgerButton.addEventListener('click', openModal);
+    }
+
+    // Обработка ctaButton кнопки (если есть)
     if (ctaButton) { // Проверяем, существует ли элемент ctaButton
         ctaButton.addEventListener('click', openModal);
     }
@@ -57,6 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.opacity = ''; //Сбрасываем opacity
         }, 300); // Время анимации (300ms)
 
-        ScrollSmoother.get().paused(false); //unpause scrollSmoother
+        //ScrollSmoother.get().paused(false); //unpause scrollSmoother
     }
 });
