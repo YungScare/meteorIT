@@ -691,6 +691,10 @@ body {
         --index: calc(2vw + 2vh); /* Максимальное значение --index */
     }
 
+    body {
+        overflow-x: hidden;
+    }
+
     /* Навигация */
     .main-nav {
         position: relative; /* Убираем фиксацию */
