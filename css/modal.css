@@ -218,6 +218,8 @@
 @media (max-width: 767px) {
     .modal__content {
       padding: 20px;
+      overflow-y: auto;
+      max-height: 90vh; /* Важно ограничить высоту */
     }
   
     .modal__close {
