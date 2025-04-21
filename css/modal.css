@@ -219,13 +219,13 @@
     .modal__content {
       padding: 20px;
       overflow-y: auto;
-      max-height: 90vh; /* Важно ограничить высоту */
+      max-height: 100vh; /* Важно ограничить высоту */
     }
   
     .modal__close {
-      top: 10px;
-      right: 20px;
-      font-size: 2rem;
+      top: 0px;
+      right: 18px;
+      font-size: 4rem;
     }
   
     .modal__grid {
