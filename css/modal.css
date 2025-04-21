@@ -214,3 +214,85 @@
 .form__group a {
   color: #555;
 }
+
+@media (max-width: 767px) {
+    .modal__content {
+      padding: 20px;
+    }
+  
+    .modal__close {
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+    }
+  
+    .modal__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .modal__left {
+      padding-right: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  
+    .modal__left h2 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+  
+    .modal__form {
+      padding-left: 0;
+    }
+  
+    .form__group {
+      margin-bottom: 15px;
+    }
+  
+    .form__group label {
+      font-size: 0.9rem;
+    }
+  
+    .form__group input {
+      font-size: 0.9rem;
+    }
+
+    .form__group textarea {
+        height: 110px;
+      }
+  
+    .form__group--inline {
+      flex-direction: column;
+    }
+  
+    .form__group--half {
+      width: 100%;
+    }
+  
+    .form__group--half:first-child {
+      margin-bottom: 15px;
+    }
+  
+    .checkbox {
+      font-size: 0.8rem;
+      padding-left: 25px;
+    }
+  
+    .checkbox span::before {
+      left: -25px;
+      width: 20px;
+      height: 20px;
+    }
+  
+    .checkbox span::after {
+      left: -19px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+    }
+  
+    .button {
+      font-size: 0.9rem;
+    }
+}
+  

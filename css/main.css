@@ -21,6 +21,44 @@
 	font-family: outfit-c;
 } */
 
+/* Меню бургер */
+/* Скрываем бургер-меню на больших экранах */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000; /* Важно, чтобы был выше меню */
+  margin-right: 10vh;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff; /* Цвет линий */
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Стили для активного состояния (когда меню открыто) */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Стили для навигации */
 .main-nav {
     position: fixed; /* Фиксируем навигацию вверху */
@@ -601,5 +639,275 @@ body {
 ::-webkit-scrollbar {
     width: 10px; /* Ширина скроллбара */
 }
-    
 
+/* Media Queries */
+
+/* Для больших экранов (1200px и больше) */
+@media (min-width: 1200px) {
+    .hero-text h1 {
+        font-size: 5rem; /* Немного увеличиваем шрифт */
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    }
+}
+
+/* Для средних экранов (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  :root {
+    --index: calc(1.5vw + 1.5vh); /* Ещё больше увеличим --index */
+  }
+
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+
+    .mission__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mission__text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: calc(var(--index) * 2);
+    }
+
+    .mission__image {
+        text-align: center;
+    }
+}
+
+/* Для маленьких экранов (до 767px) - ТЕЛЕФОНЫ */
+@media (max-width: 767px) {
+
+    :root {
+        --index: calc(2vw + 2vh); /* Максимальное значение --index */
+    }
+
+    /* Навигация */
+    .main-nav {
+        position: relative; /* Убираем фиксацию */
+        top: 0;
+        left: 0;
+        padding: calc(var(--index) * 0.25) 0;
+    }
+
+    .main-nav .container {
+        align-items: flex-start;
+    }
+
+    .main-nav .container .logo {
+        margin-bottom: 10px;
+    }
+
+    .main-nav ul {
+        display: none; /* Скрываем пункты меню */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Отображаем иконку меню (нужен JS для работы) */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        /* Добавьте стили для иконки меню (гамбургер) */
+    }
+
+    .nav-points.active {
+        display: flex; /* Показываем меню при активации */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+        padding: 10px;
+    }
+
+    /* Hero Section */
+    .hero-text {
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none;
+        max-width: 100%;
+        text-align: center;
+        padding: calc(var(--index) * 2);
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 70vw;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .main-header {
+        height: auto;
+        text-align: center;
+    }
+
+    .main-title {
+        position: static;
+        font-size: calc(var(--index) * 3);
+        margin-top: 0;
+        left: auto;
+    }
+
+    /* Mission Section */
+    .mission {
+        padding: calc(var(--index) * 4) 0;
+    }
+
+    .mission__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mission__text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: calc(var(--index) * 2);
+    }
+
+    .mission__title {
+        font-size: 2.5rem;
+        margin-bottom: calc(var(--index) * 1);
+        text-align: left;
+    }
+
+    .mission__description {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .mission__image {
+        text-align: center;
+    }
+
+    .mission__image img {
+        max-width: 60%;
+    }
+
+    /* Services Section */
+    .services {
+        padding: calc(var(--index) * 0) 0;
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(1, 1fr); /* Один столбец */
+    }
+
+    .services__item {
+        width: 100%;
+        height: 100%;
+        margin-bottom: calc(var(--index) * 2);
+    }
+
+    .services__item img {
+        height: 100%; /* Фиксированная высота изображения */
+        object-fit: cover;
+    }
+
+    .services__item.step-1 {
+        transform: translateY(0);
+    }
+      
+    .services__item.step-2 {
+        transform: translateY(0); /*  Сдвигаем вниз */
+    }
+    
+    .services__item.step-3 {
+        transform: translateY(0px); /* Сдвигаем вниз еще больше */
+    }
+    
+    .services__item.step-4 {
+        transform: translateY(0); /* Сдвигаем вниз еще больше */
+    }
+
+    /* Gallery Section */
+    .gallery {
+        flex-direction: column;
+        padding: calc(var(--index) * 0) 0;
+    }
+
+    .gallery > * {
+        width: 100%;
+    }
+
+    .gallery__item {
+        max-width: 100%;
+        margin-bottom: calc(var(--index) * 2);
+    }
+
+    .text-block__h {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-align: center;
+    }
+
+    /* CTA Section */
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: calc(var(--index) * 0.55) calc(var(--index) * 1.2);
+    }
+
+    .cta-meteorite {
+        width: calc(var(--index) * 2.5);
+        position: absolute;
+        left: 0vw;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column; /* Вертикальное расположение */
+        align-items: flex-start; /* Выравнивание по левому краю */
+        text-align: left; /* Текст тоже выравниваем по левому краю */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: left; /* Каждый блок тоже выравниваем по левому краю */
+        margin-bottom: 10px; /* Отступ между блоками */
+    }
+
+    .footer-nav {
+        flex-direction: column; /* Пункты навигации один под другим */
+        align-items: flex-start; /* Выравниваем пункты по левому краю */
+    }
+
+    .footer-nav .footer-button {
+        margin-left: 0; /* Убираем отступ у пунктов меню */
+        margin-bottom: 5px; /* Добавляем отступ снизу */
+    }
+
+    .footer-social {
+        justify-content: flex-start; /* Выравниваем иконки по левому краю */
+    }
+
+    .footer-center {
+        font-size: 2rem;
+    }
+}

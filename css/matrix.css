@@ -47,3 +47,18 @@
   transition: left 0.3s linear, top 0.3s linear;
 }
 
+@media (max-width: 767px) {
+  #matrix-container {
+    width: 85vw;
+    height: 40vh;
+    margin-bottom: 7%;
+  }
+
+  #matrix-text {
+    font-size: 35vh;
+  }
+
+  .matrix-char {
+    font-size: 12px;
+  }
+}
