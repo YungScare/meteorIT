@@ -251,6 +251,144 @@
   margin-bottom: 5%;
 }
 
-
-
 /* BLOCK #5 END */
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  /* Для экранов меньше 768px (планшеты) */
+
+  .container-block-1,
+  .container-block-2,
+  .container-block-3,
+  .container-block-4,
+  .container-block-5 {
+    flex-direction: column; /* Перестраиваем блоки в колонку */
+    align-items: center;
+    padding: 5%;
+    height: 75vh;
+  }
+
+  .left-side,
+  .right-side,
+  .left-side-block-2,
+  .right-side-block-2,
+  .left-side-block-3,
+  .right-side-block-3,
+  .left-side-block-4,
+  .right-side-block-4,
+  .left-side-block-5,
+  .right-side-block-5 {
+    width: 100%; /* Занимаем всю ширину */
+    margin: 0%;
+  }
+
+  /* Добавлены стили order для блоков */
+  .left-side-block-2 {
+      order: 2;
+  }
+
+  .right-side-block-2 {
+      order: 1;
+  }
+
+  .left-side-block-4 {
+    order: 2;
+  }
+
+  .right-side-block-4 {
+    order: 1;
+  }
+
+  .left-side-block-5 {
+    order: 2;
+  }
+
+  .right-side-block-5 {
+    order: 1;
+  }
+
+  .question,
+  .description,
+  .advantage,
+  .question-block-2,
+  .question-block-3,
+  .mission-block-3,
+  .question-block-4,
+  .mission-block-4,
+  .question-block-5,
+  .values-block-5 {
+    font-size: 1.5em; /* Уменьшаем размер шрифта */
+  }
+
+  .office-image,
+  .team-image,
+  .robot-image,
+  .background-image {
+    width: 80%; /* Растягиваем картинки на всю ширину */
+    margin-left: 10%;
+  }
+
+  .cursor-image {
+    width: 30vw; /* Увеличиваем размер курсора */
+  }
+
+  .arrow-image {
+    width: 65%; /* Уменьшаем размер стрелки */
+    top: -30%; /* Корректируем положение стрелки */
+    left: 5%;
+  }
+
+  .business-optimization-image {
+    width: 65%;
+  }
+
+  .loading-image {
+    width: 50%; /* Увеличиваем размер loading image */
+    margin-left: 0;
+  }
+
+  .arrow-image-block-5 {
+    width: 35%;
+    top: 5%;
+  }
+
+  .title-image-block-5 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Для экранов меньше 480px (телефоны) */
+  .question,
+  .description,
+  .advantage,
+  .question-block-2,
+  .question-block-3,
+  .mission-block-3,
+  .question-block-4,
+  .mission-block-4,
+  .question-block-5,
+  .values-block-5 {
+    font-size: 1.2em; /* Еще уменьшаем размер шрифта для телефонов */
+  }
+
+  .mission {
+    padding: calc(var(--index) * 0) 0;
+  }
+
+  .cursor-image {
+    width: 20vw; /* Еще увеличиваем размер курсора */
+  }
+
+  .arrow-image {
+    width: 20vw;
+  }
+
+  .loading-image {
+    width: 35%; /* Еще увеличиваем размер loading image */
+  }
+
+  .title-image-block-5 {
+    width: 100%; /* Растягиваем title image на всю ширину */
+  }
+}
