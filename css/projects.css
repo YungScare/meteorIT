@@ -48,6 +48,11 @@ body {
 	height: var(--depth);
 	/* font-weight: 300; */
 }
+
+.main-nav {
+    position: relative;
+}
+
 .project-container {
 	width: 100%;
 	height: 100%;
