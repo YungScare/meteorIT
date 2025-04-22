@@ -282,6 +282,10 @@
     margin: 0%;
   }
 
+  .mission {
+    padding: calc(var(--index) * 0) 0;
+  }
+
   /* Добавлены стили order для блоков */
   .left-side-block-2 {
       order: 2;
@@ -326,6 +330,7 @@
   .background-image {
     width: 80%; /* Растягиваем картинки на всю ширину */
     margin-left: 10%;
+    margin-bottom: 10%;
   }
 
   .cursor-image {
