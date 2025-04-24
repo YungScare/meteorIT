@@ -892,7 +892,7 @@ body {
         position: static;
         font-size: calc(var(--index) * 3);
         margin-top: 0;
-        left: auto;
+        height: 100%;
     }
 
     /* Mission Section */
