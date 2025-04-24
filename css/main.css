@@ -831,7 +831,7 @@ body {
         font-size: 1.5rem;
         font-weight: bold;
         margin-right: 12%;
-        margin-top: 10px;
+        margin-top: 8px;
         margin-bottom: 10px;
     }
 
@@ -892,7 +892,7 @@ body {
         position: static;
         font-size: calc(var(--index) * 3);
         margin-top: 0;
-        height: 100%;
+        left: auto;
     }
 
     /* Mission Section */
