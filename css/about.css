@@ -360,6 +360,14 @@
   .title-image-block-5 {
     width: 80%;
   }
+  
+  /* Отключаем или изменяем анимации на мобильных устройствах */
+  .left-side,
+  .right-side {
+    transform: none !important; /* Отменяем любые трансформации, которые могли быть заданы */
+    opacity: 1 !important; /* Делаем элементы видимыми */
+    transition: none !important; /* Убираем плавные переходы */
+  }
 }
 
 @media (max-width: 480px) {
