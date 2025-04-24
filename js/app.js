@@ -60,7 +60,4 @@ if (ScrollTrigger.isTouch !== 1) {
 		})
 	})
 
-} else {
-	// Отключаем ScrollTrigger для сенсорных устройств
-	ScrollTrigger.killAll();
 }
