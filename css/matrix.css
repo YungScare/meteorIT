@@ -55,10 +55,11 @@
   }
 
   #matrix-text {
-    font-size: 35vh;
+    font-size: 28vh;
   }
 
   .matrix-char {
     font-size: 12px;
+    letter-spacing: -0.5px;
   }
 }

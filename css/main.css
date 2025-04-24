@@ -884,20 +884,23 @@ body {
     }
 
     .main-header {
+        transform: none !important; /* Отменяем все transform */
+        position: static; /* Убираем absolute позиционирование */
+        display: block; /*  Убираем flex */
         height: auto;
         text-align: center;
     }
 
     .main-title {
-        position: static;
+        position: relative;
         font-size: calc(var(--index) * 3);
         margin-top: 0;
-        left: auto;
+        left: 0;
     }
 
     /* Mission Section */
     .mission {
-        padding: calc(var(--index) * 4) 0;
+        padding: calc(var(--index) * 1.5) 0;
     }
 
     .mission__content {
