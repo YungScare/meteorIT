@@ -43,7 +43,7 @@
 	letter-spacing: 0.1em; /* Увеличивает расстояние между буквами на 0.1em */
 }
 
-.main-nav .container {
+.main-nav .container .main-nav-header{
     display: flex;
     justify-content: space-between; /* Размещает элементы по краям */
 	align-items: center;
@@ -666,6 +666,10 @@ body {
     body {
         overflow-x: hidden;
     }
+    
+    .content, .hero, .main-header, .gallery > * {
+        will-change: auto; /*  или will-change: initial; */
+    }
 
     /* Humburger menu */
     .menu-toggle-container {
@@ -766,6 +770,8 @@ body {
     * at the top left of the screen
     */
     #menu {
+        flex-direction: column;
+        width: 100%;
         position: fixed; /* Изменено на fixed */
         top: 0;
         left: 0;
@@ -773,7 +779,7 @@ body {
         height: 100%; /* Занимает весь экран */
         margin: 0; /* Убираем отступы */
         padding: 50px;
-        padding-top: 150px;
+        padding-top: 75px;
         box-sizing: border-box;
         overflow-y: auto;
         background: #D9D9D9;
@@ -801,15 +807,15 @@ body {
     }
 
     /*  Добавляем стили для логотипа в бургер-меню */
-.burger-logo a {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #000; /*  Подберите цвет */
-    text-decoration: none;
-    margin-bottom: 20px; /* Отступ между логотипом и остальными пунктами */
-    display: block; /*  Чтобы занимал всю ширину контейнера */
-    text-align: left; /* Центрируем логотип */
-}
+    .burger-logo a {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000; /*  Подберите цвет */
+        text-decoration: none;
+        margin-bottom: 20px; /* Отступ между логотипом и остальными пунктами */
+        display: block; /*  Чтобы занимал всю ширину контейнера */
+        text-align: left; /* Центрируем логотип */
+    }
 
     /* Навигация */
     .main-nav {
@@ -835,8 +841,8 @@ body {
         margin-bottom: 10px;
     }
 
-    .main-nav ul {
-        display: none; /* Скрываем пункты меню */
+    .main-nav-header ul {
+        display: none; 
         flex-direction: column;
         width: 100%;
     }
