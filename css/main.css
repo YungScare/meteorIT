@@ -665,6 +665,8 @@ body {
 
     body {
         overflow-x: hidden;
+        background-color: #000;
+        color: #000;
     }
     
     .content, .hero, .main-header, .gallery > * {
