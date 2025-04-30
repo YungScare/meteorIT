@@ -49,9 +49,9 @@ body {
 	/* font-weight: 300; */
 }
 
-.main-nav {
+/* .main-nav {
     position: relative;
-}
+} */
 
 .project-container {
 	width: 100%;
@@ -139,4 +139,15 @@ video.frame-media_left {
 }
 .soundbutton.paused {
 	opacity: .25;
+}
+
+/* Адаптация мобильной версии */
+
+@media (max-width: 767px) {
+    .main-nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: calc(var(--index) * 0.5) 0;
+    }
 }
