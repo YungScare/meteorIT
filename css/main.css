@@ -1269,3 +1269,7 @@ body {
     margin-top: 20px;
     text-align: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
