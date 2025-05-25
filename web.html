@@ -60,10 +60,19 @@
 			<!-- Основной контент страницы по макету -->
 			<section class="web-hero">
 				<h1>Разработка<br>веб-приложений</h1>
+				<nav class="web-hero-nav">
+					<ul>
+						<li><a href="#tasks">задачи</a></li>
+						<div class="web-hero-nav-divider"></div>
+						<li><a href="#stack">стек технологий</a></li>
+						<div class="web-hero-nav-divider"></div>
+						<li><a href="#stages">этапы разработки</a></li>
+					</ul>
+				</nav>
 				<img src="img/web/globe.png" alt="Глобус" class="web-hero-globe">
 			</section>
 
-			<section class="web-tasks">
+			<section id="tasks" class="web-tasks">
 				<div class="web-tasks-grid">
 					<div class="web-tasks-left">
 						<h2 class="sticky-fade-title">Какие задачи<br>мы решаем</h2>
@@ -99,7 +108,7 @@
 				</div>
 			</section>
 
-			<section class="web-stack">
+			<section id="stack" class="web-stack">
 				<div class="web-stack-grid">
 					<div class="web-stack-left">
 						<h2 class="sticky-fade-title">Стек технологий</h2>
@@ -190,7 +199,7 @@
 				</div>
 			</section>
 
-			<section class="web-stages">
+			<section id="stages" class="web-stages">
 				<div class="web-stages-grid">
 					<div class="web-stages-left">
 						<h2 class="sticky-fade-title">Этапы разработки<br>веб-приложений</h2>
@@ -308,5 +317,7 @@
 		</div>
 	</div>
 	<script src="js/preloader.js"></script>
+	<script src="js/app.js" defer></script>
+	<script src="js/modal.js" defer></script>
 </body>
 </html> 
