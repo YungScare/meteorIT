@@ -4,8 +4,8 @@
 .bi-benefits-inner {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 1300px;
+  width: 100vw;
+  min-width: 100vw;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
@@ -36,10 +36,11 @@
 
 .bi-hero-cards {
   background: #e5e5e5;
-  border-radius: 16px;
-  padding: 36px 32px 32px 32px;
+  border-radius: 15px;
+  padding: 66px 66px 66px 40px;
   width: 100%;
-  max-width: 370px;
+  max-width: 520px;
+  min-height: 400px;
   box-shadow: 0 4px 32px rgba(0,0,0,0.10);
   margin-bottom: 32px;
 }
@@ -73,10 +74,16 @@
   margin-bottom: 10px;
 }
 
-.bi-hero img,
-.bi-benefits-inner img {
-  max-width: 60%;
-  margin: 0px 0 0 0;
+.bi-benefits1-img{
+  max-width: 40%;
+  margin: 50px;
+  display: block;
+}
+
+.bi-benefits2-img,
+.bi-benefits3-img {
+  max-width: 50%;
+  margin: 50px;
   display: block;
 }
 
@@ -87,21 +94,28 @@
 }
 
 .bi-benefits-simple .bi-benefits-simple-inner {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 0 0 0;
+  display: grid;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding: 0 94px;
+  align-items: flex-start;
 }
 
 .bi-benefits-simple h2 {
-  font-size: 2.6em;
+  font-size: 3.6em;
   font-weight: bold;
-  margin-bottom: 32px;
+  margin-bottom: 72px;
 }
 
 .bi-benefits-simple .desc {
-  font-size: 1.18em;
-  line-height: 1.4;
-  max-width: 600px;
+  font-size: 2em;
+  font-weight: 100;
+  margin-bottom: 72px;
 }
 
 .bi-benefits-title {
@@ -315,20 +329,23 @@ hr.bi-divider {
   }
 }
 
-/* 6 блок: Примеры реализованных дашбордов */
+/* 6 блок: фон черный, контент в светлом контейнере с закруглением */
 .bi-dashboards-block {
-  background: #e5e5e5;
+  background: #000;
   padding: 48px 0 48px 0;
 }
 .bi-dashboards-inner {
+  background: #e5e5e5;
+  border-radius: 15px;
+  padding: 48px 94px;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 16px;
+  box-sizing: border-box;
 }
 .bi-dashboards-title {
-  font-size: 2.2em;
+  font-size: 3em;
   font-weight: bold;
-  margin-bottom: 36px;
+  margin-bottom: 116px;
   color: #232323;
 }
 .bi-dashboards-list {
@@ -338,11 +355,10 @@ hr.bi-divider {
 }
 .bi-dashboard-card {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
   background: none;
   border-radius: 18px;
   padding: 0;
-  gap: 300px;
 }
 .bi-dashboard-card-left {
   flex: 1 1 420px;
@@ -371,14 +387,21 @@ hr.bi-divider {
   flex-direction: column;
   align-items: flex-start;
 }
+/* Увеличенная ширина контента в карточках дашбордов */
+.bi-dashboard-content {
+  min-width: 850px;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
 .bi-dashboard-header {
-  font-size: 1.25em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 10px;
   color: #232323;
 }
 .bi-dashboard-desc {
-  font-size: 1em;
+  font-size: 1.3em;
   color: #232323;
   line-height: 1.4;
 }
@@ -402,8 +425,7 @@ hr.bi-divider {
   border: 2px dashed #bdbdbd;
 }
 .bi-dashboard-img {
-  max-width: 100%;
-  max-height: 140px;
+  max-width: 170%;
   object-fit: contain;
   border-radius: 12px;
   display: block;
@@ -412,7 +434,7 @@ hr.bi-divider {
 @media (max-width: 900px) {
   .bi-dashboards-inner {
     max-width: 98vw;
-    padding: 0 4vw;
+    padding: 32px 4vw;
   }
   .bi-dashboard-card {
     flex-direction: column;
@@ -450,6 +472,10 @@ hr.bi-divider {
     height: 70px;
     font-size: 0.9em;
   }
+  .bi-dashboards-inner {
+    padding: 16px 2vw;
+    border-radius: 10px;
+  }
 }
 
 /* 7 блок: Внедрение бизнес-аналитики с нуля */
@@ -465,7 +491,8 @@ hr.bi-divider {
 .bi-steps-title {
   font-size: 2.2em;
   font-weight: bold;
-  margin-bottom: 36px;
+  margin-top: 26px;
+  margin-bottom: 66px;
   color: #232323;
 }
 .bi-steps-list {
@@ -652,48 +679,101 @@ hr.bi-divider {
 
 /* --- BI Hero Block (первый блок) --- */
 .bi-hero {
-  min-height: 80vh;
+  background: black url(../img/bi/background_first_block_bi2.png) no-repeat left top;
+  background-size: 100%;
+  color: white;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background: #000;
+  align-items: center;
   position: relative;
 }
 
-.bi-hero-inner {
-  display: flex;
-  flex-wrap: wrap;
+.bi-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 60px 0 0 0;
+  height: 100%;
+  background: black;
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bi-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bi-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr .4fr;
+  gap: 40px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding: 0 94px;
+  align-items: flex-start;
 }
 
 .bi-hero-left {
   flex: 1 1 420px;
-  min-width: 320px;
-  max-width: 600px;
+  min-width: 720px;
+  max-width: 900px;
   color: #fff;
   align-self: flex-start;
+  position: relative;
 }
 
 .bi-hero-left h1 {
-  font-size: 2.8em;
+  font-size: 3.8em;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 74px;
 }
 
 .bi-hero-left p {
-  font-size: 1.25em;
-  line-height: 1.4;
+  font-size: 2em;
+  line-height: 1.2;
   margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.bi-hero-left .bi-hero-left-desc::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: -8px;
+  width: calc(100% + 24px);
+  height: calc(100% + 16px);
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.bi-hero-left .bi-hero-left-desc:hover::after {
+  opacity: 1;
+}
+
+.bi-hero-left p:hover {
+  color: #fff;
 }
 
 .bi-hero-right {
   flex: 1 1 350px;
   min-width: 320px;
-  max-width: 620px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -708,6 +788,13 @@ hr.bi-divider {
   bottom: -115px;
   z-index: 2;
   pointer-events: none;
+}
+
+.bi-hero-left .bi-hero-left-desc-text {
+  position: relative;
+  z-index: 2;
+  background: none;
+  display: inline;
 }
 
 .bi-hero-cards > div:first-child {
@@ -743,10 +830,20 @@ hr.bi-divider {
   padding: 48px 0 48px 0;
 }
 .bi-tasks-title {
-  font-size: 2.2em;
+  font-size: 3em;
   font-weight: bold;
-  margin-bottom: 36px;
+  margin-bottom: 66px;
+  margin-top: 26px;
   color: #232323;
+  width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding-left: 94px;
+  padding-right: 94px;
 }
 .bi-tasks-grid {
   display: grid;
@@ -877,13 +974,6 @@ hr.bi-divider {
   }
 }
 
-.bi-tasks-block > .bi-tasks-title,
-.bi-tasks-block > .bi-tasks-grid {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
 .bi-task-card--wide {
   grid-column: 1 / -1;
   background: #C4CCD4;
@@ -931,7 +1021,7 @@ hr.bi-divider {
 /* === 9 блок: Консультация по внедрению BI-аналитики === */
 .bi-consult-block {
   background: #000;
-  padding: 64px 0 64px 0;
+  padding: 94px 0 94px 0;
 }
 .bi-consult-inner {
   max-width: 1300px;
@@ -953,23 +1043,23 @@ hr.bi-divider {
   position: relative;
 }
 .bi-consult-title {
-  font-size: 2.8em;
+  font-size: 3.8em;
   font-weight: bold;
   margin-bottom: 32px;
   line-height: 1.1;
 }
 .bi-consult-desc {
-  font-size: 1.25em;
+  font-size: 2em;
   line-height: 1.4;
   margin-bottom: 32px;
-  max-width: 420px;
+  max-width: 720px;
 }
 .bi-consult-rocket {
-  width: 260px;
+  width: 340px;
   height: auto;
   position: relative;
   margin-top: 32px;
-  margin-left: 0;
+  margin-left: 20%;
 }
 .bi-consult-right {
   flex: 1 1 380px;
@@ -1105,4 +1195,110 @@ hr.bi-divider {
     margin-top: 12px;
   }
 }
-/* === END 9 блок === */ 
+/* === END 9 блок === */
+
+/* --- Стили для 3-го и последующих блоков: отступы по краям как у первых двух блоков --- */
+.bi-benefits-inner {
+  width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding-left: 94px;
+  padding-right: 94px;
+  padding-bottom: 94px;
+}
+
+@media screen and (max-width: 900px) {
+  .bi-benefits-inner {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bi-benefits-inner {
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+  }
+} 
+/* Стили для 6 блока   */
+.bi-dashboards-inner {
+  min-width: 90vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-55%);
+  box-sizing: border-box;
+  padding-left: 94px;
+  padding-right: 94px;
+}
+
+/* --- Стили для 7-9 блоков: одинаковые боковые отступы, как у первых блоков --- */
+.bi-steps-inner,
+.bi-tasks-grid,
+.bi-consult-inner {
+  width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding-left: 94px;
+  padding-right: 94px;
+}
+
+@media screen and (max-width: 900px) {
+  .bi-dashboards-inner,
+  .bi-steps-inner,
+  .bi-tasks-grid,
+  .bi-consult-inner {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bi-dashboards-inner,
+  .bi-steps-inner,
+  .bi-tasks-grid,
+  .bi-consult-inner {
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+  }
+} 
+
+/* Картинка справа в .bi-task-card--wide */
+.bi-task-card--wide > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+.bi-task-card--wide img {
+  align-self: flex-end;
+  margin-left: 32px;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 900px) {
+  .bi-task-card--wide > div {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .bi-task-card--wide img {
+    margin-left: 0;
+    margin-top: 18px;
+    max-width: 60vw;
+    align-self: center;
+  }
+}
+@media (max-width: 600px) {
+  .bi-task-card--wide img {
+    max-width: 90vw;
+  }
+} 
