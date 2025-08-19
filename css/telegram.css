@@ -262,25 +262,55 @@
 .telegram-advantages-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 0;
   margin: 0 auto;
-}
-
-.telegram-advantage-block {
-  background: linear-gradient(135deg, #1e498a 0%, #3bbaf6 100%);
-  color: white;
-  padding: 60px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
-.telegram-advantage-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.4);
+.telegram-advantages-grid::before {
+  content: '';
+  position: absolute;
+  left: 33.33%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #3C3C3C;
+  z-index: 1;
 }
+
+.telegram-advantages-grid::after {
+  content: '';
+  position: absolute;
+  left: 66.66%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #3C3C3C;
+  z-index: 1;
+}
+
+.telegram-advantage-block {
+  background: white;
+  color: #3C3C3C;
+  padding: 60px;
+  border-radius: 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.telegram-advantage-block:nth-child(-n+3)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3C3C3C;
+  z-index: 1;
+}
+
+
 
 .telegram-advantage-icon {
   position: absolute;
@@ -293,11 +323,14 @@
   justify-content: center;
 }
 
+
+
 .telegram-advantage-title {
   font-size: 1.4em;
   font-weight: bold;
   margin: 0 0 15px 0;
   line-height: 1.3;
+  color: #3C3C3C;
 }
 
 .telegram-advantage-text {
@@ -305,6 +338,7 @@
   line-height: 1.5;
   margin: 0;
   opacity: 0.9;
+  color: #3C3C3C;
 }
 
 /* Telegram Stack Section */
@@ -1198,7 +1232,7 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 15px;
+    padding: 0 7vw;
   }
   
   .telegram-hero {
