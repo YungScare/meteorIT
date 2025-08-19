@@ -299,7 +299,7 @@
   position: relative;
 }
 
-.telegram-advantage-block:nth-child(-n+3)::after {
+.telegram-advantage-block:not(:last-child)::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1192,8 +1192,23 @@
     gap: 20px;
   }
   
+  .telegram-advantages-grid::before,
+  .telegram-advantages-grid::after {
+    display: none;
+  }
+  
   .telegram-advantage-block {
     padding: 25px;
+  }
+  
+  .telegram-advantage-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .telegram-advantage-icon img {
+    width: 35px;
+    height: 35px;
   }
   
   .telegram-advantage-title {
@@ -1477,8 +1492,31 @@
     gap: 15px;
   }
   
+  .telegram-advantages-grid::before,
+  .telegram-advantages-grid::after {
+    display: none;
+  }
+  
   .telegram-advantage-block {
     padding: 20px;
+  }
+  
+  .telegram-advantage-block:not(:last-child)::after {
+    display: block;
+  }
+  
+  .telegram-advantage-block:not(:last-child)::after {
+    display: block;
+  }
+  
+  .telegram-advantage-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .telegram-advantage-icon img {
+    width: 30px;
+    height: 30px;
   }
   
   .telegram-advantage-title {
