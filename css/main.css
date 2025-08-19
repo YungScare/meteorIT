@@ -28,10 +28,12 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease-in-out;
 }
+
+
 
 .desktop-nav-header {
     display: flex;
@@ -135,6 +137,8 @@
     transition: transform 0.3s ease-in-out;
 }
 
+
+
 .mobile-nav-header {
     display: flex;
     justify-content: space-between;
@@ -214,6 +218,8 @@
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
 }
+
+
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;

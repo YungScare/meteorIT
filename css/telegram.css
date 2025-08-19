@@ -1,0 +1,1457 @@
+
+/* Telegram Hero Section */
+.telegram-hero {
+  background: black url('../img/telegram/tg_backgound_block1.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.telegram-hero h1 {
+  font-size: 6em;
+  font-weight: bold;
+  margin-top: 120px;
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  line-height: 1.05;
+  margin-left: -500px;
+}
+
+.telegram-hero-visual {
+  position: absolute;
+  right: 15vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.telegram-icon-3d {
+  position: relative;
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
+  width: 180px;
+  height: 180px;
+}
+
+.telegram-icon-inner {
+  width: 100%;
+  height: 100%;
+  transform: perspective(1000px) rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.telegram-icon-inner:hover {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
+
+.telegram-icon-inner img {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.telegram-hero-nav {
+  position: absolute;
+  right: 74px;
+  bottom: 0;
+  top: auto;
+  transform: none;
+  z-index: 2;
+}
+
+.telegram-hero-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.telegram-hero-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  display: block;
+  padding: 5px 5px;
+  white-space: nowrap;
+}
+
+.telegram-hero-nav a:hover {
+  opacity: 0.7;
+}
+
+.telegram-hero-nav-divider {
+  width: 2px;
+  height: 96px;
+  background: white;
+  opacity: 0.9;
+}
+
+/* Telegram Tasks Section */
+.telegram-tasks {
+  background: #000000;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.telegram-tasks-inner {
+  margin: 0 auto;
+  padding: 0 74px;
+}
+
+.telegram-tasks-title {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.1;
+}
+
+.telegram-tasks-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.telegram-tasks-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.telegram-tasks-description {
+  font-size: 1.4em;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.telegram-tasks-features {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.telegram-tasks-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.telegram-tasks-visual {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.telegram-phone {
+  position: relative;
+  z-index: 2;
+  max-width: 450px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  margin-right: -74px;
+}
+
+.telegram-feature-block {
+  background: linear-gradient(135deg, #1e498a 0%, #3bbaf6 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.telegram-feature-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.4);
+}
+
+.telegram-feature-block--smaller {
+  min-height: 160px;
+}
+
+
+
+/* Telegram Advantages Section */
+.telegram-advantages {
+  background: #f5f5f5;
+  color: #222;
+  padding: 80px 0;
+}
+
+.telegram-advantages-inner {
+  margin: 0 auto;
+  padding: 0 74px;
+}
+
+.telegram-advantages-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.telegram-advantages-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.telegram-advantages-description p {
+  font-size: 1.3em;
+  line-height: 1.6;
+  color: #555;
+  flex: 1;
+  margin: 0;
+}
+
+.telegram-advantages-icon {
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.telegram-advantages-icon-3d {
+  position: relative;
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+}
+
+.telegram-advantages-icon-3d img {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  transform: perspective(1000px) rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.telegram-advantages-icon-3d:hover img {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
+
+.telegram-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.telegram-advantage-block {
+  background: linear-gradient(135deg, #1e498a 0%, #3bbaf6 100%);
+  color: white;
+  padding: 60px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.telegram-advantage-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.4);
+}
+
+.telegram-advantage-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.telegram-advantage-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.telegram-advantage-text {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Telegram Stack Section */
+.telegram-stack {
+  background: url('../img/telegram/backgorund_block4.png') no-repeat center center;
+  background-size: contain;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.telegram-stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 60px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding: 0 74px;
+  align-items: flex-start;
+}
+
+.telegram-stack-left {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.telegram-stack-bell {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.telegram-stack-bell-3d {
+  position: relative;
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
+  width: 200px;
+  height: 200px;
+}
+
+.telegram-stack-bell-icon {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transform: perspective(1000px) rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.telegram-stack-bell-3d:hover .telegram-stack-bell-icon {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.05);
+}
+
+
+
+.telegram-stack-bell-trails {
+  position: absolute;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.telegram-stack-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.telegram-stack-title-main {
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.telegram-stack-functions-grid {
+  background: #f5f5f5;
+  color: #222;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.telegram-stack-function-block {
+  background: transparent;
+  color: #222;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+  position: relative;
+}
+
+.telegram-stack-function-block:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.telegram-stack-function-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.telegram-stack-function-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.telegram-stack-function-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+  padding-left: 70px;
+}
+
+.telegram-stack-function-desc {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+  color: #555;
+  padding-left: 70px;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Telegram Integration Section */
+.telegram-integration {
+  background: #ffffff;
+  color: #222;
+  padding: 80px 0;
+}
+
+.telegram-integration-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 74px;
+  text-align: center;
+}
+
+.telegram-integration-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 60px;
+  line-height: 1.1;
+  color: #333;
+}
+
+.telegram-integration-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.telegram-integration-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.telegram-integration-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.telegram-integration-service:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.telegram-integration-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+
+
+.telegram-integration-cloud {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+
+
+
+
+.telegram-integration-cloud-main {
+  position: relative;
+  z-index: 3;
+  width: 300px;
+  height: 250px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.telegram-integration-cloud-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+
+
+/* Telegram Pricing Section */
+.telegram-pricing {
+  background: #000000;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.telegram-pricing-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 74px;
+  text-align: center;
+}
+
+.telegram-pricing-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.telegram-pricing-description {
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #cccccc;
+}
+
+.telegram-pricing-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.telegram-pricing-block {
+  background: #f5f5f5;
+  color: #222;
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.telegram-pricing-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.1);
+}
+
+.telegram-pricing-content {
+  flex: 1;
+  text-align: left;
+}
+
+.telegram-pricing-category {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.telegram-pricing-desc {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+.telegram-pricing-price {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Telegram Development Stages Section */
+.telegram-development-stages {
+  background: url('../img/telegram/backgound_stages_dev.png') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  padding: 150px 0 250px 0;
+}
+
+.telegram-development-stages-inner {
+  margin: 0 auto;
+  padding: 0 74px;
+  text-align: center;
+}
+
+.telegram-development-stages-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 160px;
+  line-height: 1.1;
+}
+
+.telegram-development-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.telegram-development-stage-block {
+  background: rgba(20, 20, 20, 0.7);
+  color: #ffffff;
+  padding: 60px;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.telegram-development-stage-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.telegram-development-stage-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.telegram-development-stage-desc {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+  color: #cccccc;
+}
+
+/* Telegram Astronaut Section */
+.telegram-astronaut {
+  background: #000000;
+  color: white;
+  padding: 80px 0;
+  position: relative;
+}
+
+.telegram-astronaut::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.telegram-astronaut-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 74px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.telegram-astronaut-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.telegram-astronaut-character {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.telegram-astronaut-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 25px rgba(59, 130, 246, 0.3));
+  animation: float 6s ease-in-out infinite;
+}
+
+.telegram-astronaut-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.telegram-astronaut-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.telegram-astronaut-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Sticky fade title animation */
+.sticky-fade-title {
+  position: sticky;
+  top: 120px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.sticky-fade-title.fade {
+  opacity: 0.3;
+}
+
+/* Анимации */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .telegram-tasks-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .telegram-tasks-left {
+    text-align: center;
+  }
+  
+  .telegram-tasks-visual {
+    height: 400px;
+  }
+  
+  .telegram-phone {
+    max-width: 350px;
+    margin-right: -30px;
+  }
+  
+  .telegram-stack-grid,
+  .telegram-pricing-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .telegram-pricing-block {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .telegram-pricing-content {
+    text-align: center;
+  }
+  
+  .telegram-pricing-block {
+    padding: 30px;
+  }
+  
+  .telegram-pricing-category {
+    font-size: 1.5em;
+  }
+  
+  .telegram-pricing-desc {
+    font-size: 1em;
+  }
+  
+  .telegram-pricing-price {
+    font-size: 1.1em;
+    padding: 15px 25px;
+  }
+  
+  .telegram-stack-left {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .telegram-stack-bell {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .telegram-stack-bell-3d {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .telegram-stack-bell-icon {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .telegram-stack-functions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px;
+  }
+  
+  .telegram-stack-left h2 {
+    text-align: center;
+    max-width: none;
+  }
+  
+  .telegram-stack-right {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .telegram-stack-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .telegram-product-bottom-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .telegram-advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .telegram-advantages-description {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .telegram-development-stages-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-development-stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .telegram-hero {
+    padding: 100px 20px 40px 20px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .telegram-hero h1 {
+    font-size: 3.5em;
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  .telegram-hero-visual {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 40px;
+  }
+  
+  .telegram-icon-3d {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-icon-inner img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-hero-nav {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 40px;
+  }
+  
+  .telegram-hero-nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .telegram-hero-nav-divider {
+    width: 80px;
+    height: 2px;
+  }
+  
+  .telegram-tasks-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-stack-grid,
+  .telegram-pricing-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .telegram-stack-bell {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-stack-bell-3d {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-stack-bell-icon {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-stack-functions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 25px;
+  }
+  
+  .telegram-stack-title-main {
+    font-size: 2.8em;
+  }
+  
+  .telegram-stack-right {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .telegram-integration-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-integration-services {
+    gap: 30px;
+  }
+  
+  .telegram-integration-row {
+    gap: 60px;
+  }
+  
+  .telegram-integration-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+
+  
+  .telegram-integration-cloud-main {
+    width: 200px;
+    height: 170px;
+  }
+  
+  .telegram-integration-cloud-arcs {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .telegram-integration-arc {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .telegram-integration-platform {
+    width: 250px;
+  }
+  
+  .telegram-tasks-title {
+    font-size: 3em;
+  }
+  
+  .telegram-stack-left h2 {
+    font-size: 2.8em;
+  }
+  
+  .telegram-stack-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .telegram-pricing-title {
+    font-size: 2.8em;
+  }
+  
+  .telegram-stack-title,
+  .telegram-stage-title {
+    font-size: 1.8em;
+  }
+  
+  .telegram-stage-desc {
+    font-size: 1.1em;
+  }
+  
+  .telegram-feature-block {
+    padding: 25px;
+    font-size: 1.1em;
+  }
+  
+  .telegram-tasks-visual {
+    height: 350px;
+  }
+  
+  .telegram-phone {
+    max-width: 280px;
+    margin-right: -20px;
+  }
+  
+  .telegram-product-title {
+    font-size: 2.8em;
+  }
+  
+  .telegram-product-bottom-left {
+    font-size: 1.6em;
+  }
+  
+  .telegram-astronaut-inner {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .telegram-astronaut-character {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .telegram-astronaut-btn {
+    width: 340px;
+    padding: 18px 35px;
+    font-size: 1.1em;
+  }
+  
+  .telegram-advantages-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-advantages-title {
+    font-size: 2.8em;
+  }
+  
+  .telegram-advantages-description {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .telegram-advantages-icon-3d {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-advantages-icon-3d img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .telegram-advantage-block {
+    padding: 25px;
+  }
+  
+  .telegram-advantage-title {
+    font-size: 1.2em;
+  }
+  
+  .telegram-advantage-text {
+    font-size: 0.9em;
+  }
+  
+  .telegram-development-stages-inner {
+    padding: 0 20px;
+  }
+  
+  .telegram-development-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .telegram-development-stages-title {
+    font-size: 2.8em;
+  }
+  
+  .telegram-development-stage-block {
+    padding: 25px;
+  }
+  
+  .telegram-development-stage-title {
+    font-size: 1.2em;
+  }
+  
+  .telegram-development-stage-desc {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .telegram-hero {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .telegram-hero h1 {
+    font-size: 2.2em;
+    margin-left: 0;
+  }
+  
+  .telegram-hero-visual {
+    margin-top: 30px;
+  }
+  
+  .telegram-icon-3d {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-icon-inner img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-tasks-inner {
+    padding: 0 15px;
+  }
+  
+  .telegram-stack-grid,
+  .telegram-pricing-inner {
+    padding: 0 15px;
+  }
+  
+  .telegram-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .telegram-development-stages-inner {
+    padding: 0 15px;
+  }
+  
+  .telegram-development-stages-title {
+    font-size: 2.2em;
+  }
+  
+  .telegram-development-stage-block {
+    padding: 20px;
+  }
+  
+  .telegram-development-stage-title {
+    font-size: 1.1em;
+  }
+  
+  .telegram-development-stage-desc {
+    font-size: 0.8em;
+  }
+  
+  .telegram-integration-inner {
+    padding: 0 15px;
+  }
+  
+  .telegram-integration-services {
+    gap: 30px;
+  }
+  
+  .telegram-integration-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+
+  
+  .telegram-integration-cloud-main {
+    width: 150px;
+    height: 125px;
+  }
+  
+  .telegram-integration-cloud-arcs {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .telegram-integration-arc {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .telegram-integration-platform {
+    width: 200px;
+  }
+  
+  .telegram-integration-title {
+    font-size: 2.2em;
+  }
+  
+  .telegram-tasks-title {
+    font-size: 2.5em;
+  }
+  
+  .telegram-stack-left h2 {
+    font-size: 2.2em;
+  }
+  
+  .telegram-stack-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .telegram-pricing-title {
+    font-size: 2.2em;
+  }
+  
+  .telegram-pricing-block {
+    padding: 25px;
+  }
+  
+  .telegram-pricing-category {
+    font-size: 1.3em;
+  }
+  
+  .telegram-pricing-desc {
+    font-size: 0.9em;
+  }
+  
+  .telegram-pricing-price {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+  
+  .telegram-stack-bell {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-stack-bell-3d {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-stack-bell-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .telegram-stack-title-main {
+    font-size: 2.2em;
+  }
+  
+  .telegram-stack-right {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .telegram-stack-function-block {
+    padding: 15px;
+  }
+  
+  .telegram-stack-function-title {
+    font-size: 1.2em;
+  }
+  
+  .telegram-stack-function-desc {
+    font-size: 0.9em;
+  }
+  
+  .telegram-stack-title,
+  .telegram-stage-title {
+    font-size: 1.5em;
+  }
+  
+  .telegram-stage-desc {
+    font-size: 1em;
+  }
+  
+  .telegram-feature-block {
+    padding: 20px;
+    font-size: 1em;
+  }
+  
+  .telegram-tasks-visual {
+    height: 300px;
+  }
+  
+  .telegram-phone {
+    max-width: 220px;
+    margin-right: -15px;
+  }
+  
+  .telegram-product-title {
+    font-size: 2.2em;
+  }
+  
+  .telegram-product-bottom-left {
+    font-size: 1.3em;
+  }
+  
+  .telegram-astronaut-inner {
+    padding: 0 15px;
+    gap: 30px;
+  }
+  
+  .telegram-astronaut-character {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .telegram-astronaut-btn {
+    width: 300px;
+    padding: 15px 30px;
+    font-size: 1em;
+  }
+  
+  .telegram-advantages-inner {
+    padding: 0 15px;
+  }
+  
+  .telegram-advantages-title {
+    font-size: 2.2em;
+  }
+  
+  .telegram-advantages-description p {
+    font-size: 1.1em;
+  }
+  
+  .telegram-advantages-icon-3d {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .telegram-advantages-icon-3d img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .telegram-advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .telegram-advantage-block {
+    padding: 20px;
+  }
+  
+  .telegram-advantage-title {
+    font-size: 1.1em;
+  }
+  
+  .telegram-advantage-text {
+    font-size: 0.9em;
+  }
+}
