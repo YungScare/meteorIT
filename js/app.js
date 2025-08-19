@@ -71,18 +71,16 @@ function handleHeaderScroll() {
 
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
         // Определяем направление скролла
         if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
             // Скролл вниз
-            desktopNav.style.transform = 'translateY(-100%)';
-            mobileNav.style.transform = 'translateY(-100%)';
+            if (desktopNav) desktopNav.style.transform = 'translateY(-100%)';
+            if (mobileNav) mobileNav.style.transform = 'translateY(-100%)';
         } else {
             // Скролл вверх
-            desktopNav.style.transform = 'translateY(0)';
-            mobileNav.style.transform = 'translateY(0)';
+            if (desktopNav) desktopNav.style.transform = 'translateY(0)';
+            if (mobileNav) mobileNav.style.transform = 'translateY(0)';
         }
-        
         lastScrollTop = scrollTop;
     });
 }

@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const burgerButton = document.querySelector('.burger-button'); // Кнопка заявки в бургер меню
     const ctaButton = document.querySelector('.cta-button'); // Основная заявки кнопка
     const closeButton = document.querySelector('.modal__close');
+    
+    // Кнопки на странице телеграм
+    const telegramAstronautBtn = document.querySelector('.telegram-astronaut-btn-primary'); // Кнопка "ОБСУДИТЬ ПРОЕКТ" в секции с астронавтом
+    const telegramAstronautBtnSecondary = document.querySelector('.telegram-astronaut-btn-secondary'); // Кнопка "КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ"
+    
+    // Кнопки на странице web
+    const webTeamBtn = document.querySelector('.web-team-btn'); // Кнопка "ОБСУДИТЬ ПРОЕКТ" в секции команды
 
     // Функция для открытия модального окна (чтобы избежать дублирования кода)
     function openModal(event) {
@@ -24,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Обработка кнопки в шапке
-    navButton.addEventListener('click', openModal);
+    if (navButton) {
+        navButton.addEventListener('click', openModal);
+    }
 
     // Обработка burgerButton кнопки (если есть)
     if (burgerButton) { // Проверяем, существует ли элемент burgerButton
@@ -35,11 +44,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ctaButton) { // Проверяем, существует ли элемент ctaButton
         ctaButton.addEventListener('click', openModal);
     }
+    
+    // Обработка кнопки "ОБСУДИТЬ ПРОЕКТ" на странице телеграм
+    if (telegramAstronautBtn) {
+        telegramAstronautBtn.addEventListener('click', openModal);
+    }
+    
+    // Обработка кнопки "КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ" на странице телеграм
+    if (telegramAstronautBtnSecondary) {
+        telegramAstronautBtnSecondary.addEventListener('click', openModal);
+    }
+    
+    // Обработка кнопки "ОБСУДИТЬ ПРОЕКТ" на странице web
+    if (webTeamBtn) {
+        webTeamBtn.addEventListener('click', openModal);
+    }
 
     // Закрытие модального окна по клику на крестик
-    closeButton.addEventListener('click', function() {
-        closeModal();
-    });
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            closeModal();
+        });
+    }
 
     // Закрытие модального окна по клику вне окна
     window.addEventListener('click', function(event) {
