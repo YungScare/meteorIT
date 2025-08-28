@@ -21,6 +21,28 @@ function handleHeaderScroll() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для мобильного выпадающего меню
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+        });
+    });
+    
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.mobile-dropdown')) {
+            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     handleHeaderScroll();
 }); 
