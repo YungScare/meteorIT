@@ -336,36 +336,6 @@ document.addEventListener('DOMContentLoaded', function() {
     errorBlinkEffect();
     addMeteoriteClickEffect();
 
-    // Эффект восстановления системы (имитация)
-    const systemRecoveryEffect = () => {
-        const recoveryText = document.createElement('div');
-        recoveryText.innerHTML = '🔄 Восстановление системы...';
-        recoveryText.style.position = 'fixed';
-        recoveryText.style.top = '20px';
-        recoveryText.style.right = '20px';
-        recoveryText.style.background = 'rgba(0, 0, 0, 0.8)';
-        recoveryText.style.color = '#00ff00';
-        recoveryText.style.padding = '10px 20px';
-        recoveryText.style.borderRadius = '5px';
-        recoveryText.style.fontSize = '14px';
-        recoveryText.style.zIndex = '1000';
-        recoveryText.style.opacity = '0';
-        recoveryText.style.transition = 'opacity 0.5s ease';
-        
-        document.body.appendChild(recoveryText);
-        
-        setTimeout(() => {
-            recoveryText.style.opacity = '1';
-        }, 5000);
-        
-        setTimeout(() => {
-            recoveryText.style.opacity = '0';
-            setTimeout(() => {
-                recoveryText.remove();
-            }, 500);
-        }, 8000);
-    };
 
-    // Запускаем эффект восстановления
-    setTimeout(systemRecoveryEffect, 2000);
 });
+
