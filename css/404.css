@@ -1,0 +1,381 @@
+/* 404 Error Page Styles */
+
+.error-404 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--index) * 4) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-404-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--index) * 4);
+    width: 100%;
+}
+
+.error-404-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.error-404-right {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+}
+
+.error-404-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--color-header);
+    margin: 0;
+    line-height: 0.8;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.error-404-subtitle {
+    font-size: 3rem;
+    color: var(--color-header);
+    margin: calc(var(--index) * 1) 0;
+    line-height: 1.2;
+}
+
+.error-404-description {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: calc(var(--index) * 3);
+    max-width: 90%;
+}
+
+.error-404-actions {
+    display: flex;
+    gap: calc(var(--index) * 1.5);
+    flex-wrap: wrap;
+}
+
+.error-404-button {
+    display: inline-block;
+    padding: calc(var(--index) * 0.8) calc(var(--index) * 2);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-404-button--primary {
+    background: #5e5e5e;
+    color: #000000;
+}
+
+.error-404-button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.error-404-button--secondary {
+    background: transparent;
+    color: var(--color-header);
+    border: 2px solid var(--color-header);
+}
+
+.error-404-button--secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* Визуальная часть */
+.error-404-visual {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-404-astronaut {
+    width: 200px;
+    height: auto;
+    z-index: 3;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+
+/* Анимация звёзд */
+.error-404-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.star-3 {
+    top: 60%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    top: 70%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.star-5 {
+    top: 40%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Секция с полезными ссылками */
+.error-404-links {
+    padding: calc(var(--index) * 4) 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.error-404-links-title {
+    font-size: 2.5rem;
+    color: var(--color-header);
+    text-align: center;
+    margin-bottom: calc(var(--index) * 3);
+}
+
+.error-404-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: calc(var(--index) * 2);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.error-404-link-card {
+    background: #5e5e5e;
+    border-radius: 12px;
+    padding: calc(var(--index) * 2);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.error-404-link-card:hover {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.error-404-link-card:hover .error-404-link-icon svg {
+    transform: scale(1.1) rotate(5deg);
+    color: #ffffff;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.error-404-link-icon {
+    margin-bottom: calc(var(--index) * 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-header);
+    transition: all 0.3s ease;
+}
+
+.error-404-link-icon svg {
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s ease;
+}
+
+.error-404-link-card h4 {
+    font-size: 1.5rem;
+    color: var(--color-header);
+    margin-bottom: calc(var(--index) * 0.5);
+}
+
+.error-404-link-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .error-404-content {
+        flex-direction: column;
+        text-align: center;
+        gap: calc(var(--index) * 3);
+    }
+
+    .error-404-left,
+    .error-404-right {
+        max-width: 100%;
+    }
+
+    .error-404-title {
+        font-size: 6rem;
+    }
+
+    .error-404-subtitle {
+        font-size: 2.5rem;
+    }
+
+    .error-404-description {
+        max-width: 100%;
+    }
+
+    .error-404-visual {
+        height: 400px;
+    }
+
+    .error-404-astronaut {
+        width: 150px;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .error-404 {
+        padding: calc(var(--index) * 2) 0;
+    }
+
+    .error-404-title {
+        font-size: 4rem;
+    }
+
+    .error-404-subtitle {
+        font-size: 2rem;
+    }
+
+    .error-404-description {
+        font-size: 1.2rem;
+    }
+
+    .error-404-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .error-404-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .error-404-visual {
+        height: 300px;
+    }
+
+    .error-404-astronaut {
+        width: 120px;
+    }
+
+
+
+    .error-404-links-title {
+        font-size: 2rem;
+    }
+
+    .error-404-links-grid {
+        grid-template-columns: 1fr;
+        gap: calc(var(--index) * 1.5);
+    }
+
+    .error-404-link-card {
+        padding: calc(var(--index) * 1.5);
+    }
+
+    .error-404-link-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Дополнительные эффекты */
+.error-404::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.error-404-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Пульсирующий эффект для кнопок */
+.error-404-button--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.error-404-button--primary:hover::before {
+    left: 100%;
+}

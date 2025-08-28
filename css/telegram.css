@@ -299,7 +299,7 @@
   position: relative;
 }
 
-.telegram-advantage-block:not(:last-child)::after {
+.telegram-advantage-block::after {
   content: '';
   position: absolute;
   bottom: 0;

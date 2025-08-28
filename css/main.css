@@ -181,6 +181,10 @@
     font-size: 1.1rem;
 }
 
+.dropdown-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
 /* Мобильная навигация */
 .mobile-nav {
     display: none;

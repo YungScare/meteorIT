@@ -170,6 +170,22 @@
 
 .bi-benefits-inner li {
   margin-bottom: 6px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.bi-benefits-inner li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url('../img/bi/caret-right-fill.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .bi-benefits-inner h3 {
@@ -254,6 +270,11 @@ hr.bi-divider {
     border-radius: 8px;
     margin-top: 10px;
   }
+  .bi-commercial-btn {
+    font-size: 1em;
+    padding: 15px 30px;
+    min-width: 250px;
+  }
   .bi-consult-form input, .bi-consult-form textarea {
     font-size: 1em;
     padding: 8px 0 6px 0;
@@ -265,6 +286,20 @@ hr.bi-divider {
   .bi-consult-checkbox {
     font-size: 0.95em;
     gap: 6px;
+    padding-left: 30px;
+  }
+  
+  .bi-consult-checkbox span::before {
+    left: -30px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .bi-consult-checkbox span::after {
+    left: -24px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
   }
   .bi-task-card-img {
     max-width: 80vw !important;
@@ -301,6 +336,15 @@ hr.bi-divider {
   }
   .bi-benefits-inner ul {
     font-size: 1em;
+  }
+  
+  .bi-benefits-inner li {
+    padding-left: 35px;
+  }
+  
+  .bi-benefits-inner li::before {
+    width: 20px;
+    height: 20px;
   }
   .bi-hero img {
     max-width: 40vw !important;
@@ -1122,11 +1166,106 @@ hr.bi-divider {
   align-items: flex-start;
   gap: 8px;
 }
+.bi-consult-checkbox {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .bi-consult-checkbox input[type="checkbox"] {
-  accent-color: #232323;
-  width: 18px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.bi-consult-checkbox span {
+  position: relative;
+}
+
+/* Custom Checkbox Styling */
+.bi-consult-checkbox span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -35px;
   height: 18px;
-  margin-top: 0;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #232323;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.bi-consult-checkbox:hover input ~ span::before {
+  background-color: #f5f5f5;
+}
+
+/* When the checkbox is checked, add a dark background */
+.bi-consult-checkbox input:checked ~ span::before {
+  background-color: #232323;
+  border-color: #232323;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.bi-consult-checkbox span::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: -28px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+/* Show the checkmark when checked with smooth animation */
+.bi-consult-checkbox input:checked ~ span::after {
+  display: block;
+  animation: checkmarkAppear 0.3s ease-in-out;
+}
+
+/* Animation for checkmark appearance */
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: rotate(45deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Animation for checkmark disappearance */
+.bi-consult-checkbox input:not(:checked) ~ span::after {
+  animation: checkmarkDisappear 0.2s ease-in-out;
+}
+
+@keyframes checkmarkDisappear {
+  0% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
 }
 .bi-consult-checkbox a {
   color: #232323;
@@ -1147,6 +1286,32 @@ hr.bi-divider {
 }
 .bi-consult-btn:hover {
   background: #444;
+}
+.bi-commercial-btn-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  width: 100%;
+}
+.bi-commercial-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  width: 540px;
+  min-width: 300px;
+}
+.bi-commercial-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 900px) {
   .bi-consult-inner {
@@ -1193,6 +1358,14 @@ hr.bi-divider {
   .bi-consult-rocket {
     width: 100px;
     margin-top: 12px;
+  }
+  .bi-commercial-btn {
+    padding: 12px 25px;
+    font-size: 0.9em;
+    min-width: 200px;
+  }
+  .bi-commercial-btn-container {
+    margin-top: 15px;
   }
 }
 /* === END 9 блок === */
