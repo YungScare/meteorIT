@@ -31,6 +31,8 @@
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease-in-out;
+    height: auto; /* Автоматическая высота */
+    min-height: 90px; /* Минимальная высота */
 }
 
 
@@ -41,6 +43,16 @@
     align-items: center;
     padding: 36px 0; /* увеличено с 20px 0 */
     width: 100%;
+    transition: padding 0.4s ease;
+}
+
+/* Увеличиваем высоту шапки при выпадении меню */
+.desktop-nav.dropdown-expanded {
+    min-height: 140px; /* Увеличиваем высоту шапки */
+}
+
+.desktop-nav.dropdown-expanded .desktop-nav-header {
+    padding: 25px 0; /* Уменьшаем отступы внутри шапки */
 }
 
 .desktop-nav .logo {
@@ -54,7 +66,7 @@
 
 .desktop-nav .nav-points {
     display: flex;
-    gap: 40px;
+    gap: 80px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -85,6 +97,7 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
+    z-index: 1001;
 }
 
 .desktop-nav .nav-points a:hover::after {
@@ -122,6 +135,50 @@
 
 .desktop-nav .nav-button:hover::before {
     transform: translateX(0);
+}
+
+/* Стили для выпадающего меню */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-radius: 5px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 20px 0 0 0;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
 }
 
 /* Мобильная навигация */
@@ -237,6 +294,7 @@
     width: 100vw; /* Занимает всю ширину viewport */
     height: 100vh; /* Занимает всю высоту viewport */
     margin: 0;
+    gap: 0;
     padding: 50px;
     padding-top: 75px;
     background: #D9D9D9;
@@ -249,7 +307,7 @@
 }
 
 #menu li {
-    padding: 10px 0;
+    padding: 0;
     font-size: 22px;
     width: 100%; /* Занимает всю ширину */
 }
@@ -268,6 +326,138 @@
 
 #menuToggle input:checked ~ ul {
     transform: none;
+}
+
+/* Стили для мобильного выпадающего меню */
+.mobile-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0; /* Убираем отступ снизу */
+}
+
+.mobile-dropdown-toggle {
+    display: block;
+    padding: 16px 0; /* Увеличиваем отступы для тапа */
+    color: #232323;
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.mobile-dropdown-toggle:hover {
+    color: #000000;
+}
+
+/* Убираем границу у последнего пункта */
+#menu > li:last-child .mobile-dropdown-toggle,
+#menu > li:last-child > a {
+    border-bottom: none;
+}
+
+.mobile-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-dropdown-menu li {
+    padding: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Задержка для каждого пункта меню */
+.mobile-dropdown-menu li:nth-child(1) { transition-delay: 0.05s; }
+.mobile-dropdown-menu li:nth-child(2) { transition-delay: 0.1s; }
+.mobile-dropdown-menu li:nth-child(3) { transition-delay: 0.15s; }
+.mobile-dropdown-menu li:nth-child(4) { transition-delay: 0.2s; }
+
+.mobile-dropdown-menu a {
+    display: block;
+    padding: 12px 20px 12px 40px; /* Увеличиваем отступы */
+    color: #232323;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.mobile-dropdown-menu a:hover {
+    color: #000000;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-left-color: #232323;
+    padding-left: 45px;
+}
+
+/* Стили для обычных пунктов меню (О нас, Контакты) */
+#menu > li > a:not(.mobile-dropdown-toggle) {
+    display: block;
+    padding: 16px 0; /* Такие же отступы как у Продуктов */
+    color: #232323;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#menu > li > a:not(.mobile-dropdown-toggle):hover {
+    color: #000000;
+}
+
+/* Адаптация для мобильного меню */
+@media (max-width: 767px) {
+    #menu li {
+        margin-bottom: 0; /* Убираем отступы между пунктами */
+    }
+    
+    #menu li.mobile-dropdown {
+        margin-bottom: 0;
+    }
+    
+    .mobile-dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.03);
+        border-radius: 0 0 8px 8px;
+        margin: 0;
+        padding: 5px 0;
+    }
+    
+    .mobile-dropdown-toggle {
+        padding: 16px 0;
+        font-weight: 500;
+    }
+    
+    .mobile-dropdown-menu a {
+        padding: 12px 20px 12px 40px;
+        font-size: 20px;
+        margin: 0;
+    }
+    
+}
+
+/* Плавное закрытие */
+.mobile-dropdown:not(.active) .mobile-dropdown-menu {
+    transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.mobile-dropdown:not(.active) .mobile-dropdown-menu li {
+    transition: all 0.2s ease;
 }
 
 /* Медиа-запросы */
