@@ -631,6 +631,10 @@ body {
     text-align: right; /* Выравниваем изображение по правому краю */
 }
 
+.astronaut-wrapper {
+    display: inline-block;
+}
+
 .mission__image img {
     max-width: 100%;
     height: auto;
@@ -1323,6 +1327,10 @@ body {
         text-align: center;
     }
 
+    .astronaut-wrapper {
+        display: inline-block;
+    }
+
     .mission__image img {
         max-width: 60%;
     }
@@ -1473,3 +1481,5 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
