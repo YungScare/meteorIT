@@ -135,7 +135,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Анимация пульсации для астронавта
+function initAstronautPulse() {
+    const astronautWrapper = document.querySelector('.astronaut-wrapper');
+    if (!astronautWrapper) return;
+
+    // Создаем GSAP анимацию пульсации размера
+    gsap.to(astronautWrapper, {
+        scale: 1.05,
+        duration: 4,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1
+    });
+}
+
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     handleHeaderScroll();
+    initAstronautPulse();
 });
