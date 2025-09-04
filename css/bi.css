@@ -1417,6 +1417,15 @@ hr.bi-divider {
   margin-bottom: 18px;
   display: inline-block;
   color: #232323;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bi-hero-badge:hover {
+  background: #232323;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 35, 35, 0.3);
 }
 
 /* --- 8 блок: задачи meteorIT --- */
@@ -1504,6 +1513,31 @@ hr.bi-divider {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bi-task-card-badge:hover {
+  background: #232323;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 35, 35, 0.3);
+}
+
+.bi-task-card--dark .bi-task-card-badge {
+  background: #ededed;
+  color: #232323;
+  border: 2px solid #ededed;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.bi-task-card--dark .bi-task-card-badge:hover {
+  background: #fff;
+  color: #232323;
+  border: 2px solid #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 .bi-task-card-btn {
   background: #ededed;
@@ -1670,6 +1704,17 @@ hr.bi-divider {
   position: relative;
   margin-top: 32px;
   margin-left: 20%;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.3));
+  animation: rocketFloat 6s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 .bi-consult-right {
   flex: 1 1 380px;
