@@ -23,7 +23,7 @@
 
 .question {
   font-size: 2.2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 10%;
   letter-spacing: 0.05em; /* Added letter-spacing */
@@ -31,7 +31,7 @@
 
 .description {
   font-size: 2.2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 1%;
   letter-spacing: 0.05em; /* Added letter-spacing */
@@ -71,7 +71,7 @@
 
 .advantage, .question-block-2 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.1em;
   margin-bottom: 10%;
@@ -122,7 +122,7 @@
 
 .question-block-3 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
   margin-bottom: 5%;
@@ -130,7 +130,7 @@
 
 .mission-block-3 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
@@ -164,7 +164,7 @@
 
 .question-block-4 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
   margin-bottom: 5%;
@@ -172,7 +172,7 @@
 
 .mission-block-4 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
   margin-left: 5%;
@@ -213,7 +213,7 @@
 
 .title-block-5 {
   font-size: 3em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 5%;
   font-family: Arial, sans-serif; /* Примерный шрифт, как на картинке */
@@ -221,13 +221,14 @@
 
 .values-block-5 {
   font-size: 2em;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
 
 .question-block-5 {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.05em;
   margin-bottom: 5%;
@@ -253,7 +254,89 @@
 
 /* BLOCK #5 END */
 
-/* Адаптивные стили */
+/* Адаптивные стили для больших ноутбуков */
+@media (min-width: 1580px) and (max-width: 1710px) {
+  .description {
+    margin-left: 5%;
+  }
+  
+  .advantage {
+    margin-right: 5%;
+  }
+}
+
+/* Адаптивные стили для ноутбуков */
+@media (min-width: 1200px) and (max-width: 1580px) {
+  .question,
+  .description,
+  .advantage,
+  .question-block-2,
+  .question-block-3,
+  .mission-block-3,
+  .question-block-4,
+  .mission-block-4,
+  .question-block-5,
+  .values-block-5 {
+    font-size: 1.8em;
+  }
+  
+  .description {
+    margin-left: 10%;
+  }
+  
+  .advantage {
+    margin-right: 10%;
+  }
+}
+
+/* Адаптивные стили для средних ноутбуков */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .question,
+  .description,
+  .advantage,
+  .question-block-2,
+  .question-block-3,
+  .mission-block-3,
+  .question-block-4,
+  .mission-block-4,
+  .question-block-5,
+  .values-block-5 {
+    font-size: 1.6em;
+  }
+  
+  .description {
+    margin-left: 8%;
+  }
+  
+  .advantage {
+    margin-right: 8%;
+  }
+}
+
+/* Адаптивные стили для планшетов в горизонтальной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .question,
+  .description,
+  .advantage,
+  .question-block-2,
+  .question-block-3,
+  .mission-block-3,
+  .question-block-4,
+  .mission-block-4,
+  .question-block-5,
+  .values-block-5 {
+    font-size: 1.4em;
+  }
+  
+  .description {
+    margin-left: 5%;
+  }
+  
+  .advantage {
+    margin-right: 5%;
+  }
+}
+
 @media (max-width: 768px) {
   /* Для экранов меньше 768px (планшеты) */
 
@@ -321,7 +404,7 @@
   .mission-block-4,
   .question-block-5,
   .values-block-5 {
-    font-size: 1.5em; /* Уменьшаем размер шрифта */
+    font-size: 1.2em; /* Уменьшаем размер шрифта для планшетов */
   }
 
   .office-image,
@@ -374,7 +457,7 @@
   .mission-block-4,
   .question-block-5,
   .values-block-5 {
-    font-size: 1.2em; /* Еще уменьшаем размер шрифта для телефонов */
+    font-size: 1em; /* Еще уменьшаем размер шрифта для телефонов */
   }
 
   .mission {
