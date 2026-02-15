@@ -1,0 +1,88 @@
+/* ===== 3D WIREFRAME GLOBE STYLES ===== */
+.web-hero-globe {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 550px; /* Увеличено с 500px */
+    height: 550px; /* Увеличено с 500px */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.globe-container {
+    width: 75%; /* Увеличено с 72% */
+    height: 72%; /* Увеличено с 72% */
+    position: relative;
+    border-radius: 50%;
+    background: #000000;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+    /* Добавьте эти свойства для центрирования */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto; /* для вертикального центрирования */
+    top: 5%; /* дополнительное смещение для точного центрирования */
+}
+
+.globe-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    opacity: 0.7;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .web-hero-globe {
+        width: 450px; /* Увеличено с 400px */
+        height: 450px; /* Увеличено с 400px */
+    }
+}
+
+@media (max-width: 992px) {
+    .web-hero-globe {
+        width: 400px; /* Увеличено с 350px */
+        height: 400px; /* Увеличено с 350px */
+    }
+}
+
+@media (max-width: 768px) {
+    .web-hero-globe {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 380px; /* Увеличено с 340px */
+        height: 380px; /* Увеличено с 340px */
+        margin: 40px auto 0;
+        margin-left: -15px; /* Сдвиг влево на мобилках */
+    }
+}
+
+@media (max-width: 480px) {
+    .web-hero-globe {
+        width: 350px; /* Увеличено с 320px */
+        height: 350px; /* Увеличено с 320px */
+        margin-left: -12px; /* Немного увеличен сдвиг */
+    }
+}
+
+@media (max-width: 360px) {
+    .web-hero-globe {
+        width: 320px; /* Увеличено с 300px */
+        height: 320px; /* Увеличено с 300px */
+        margin-left: -10px; /* Немного увеличен сдвиг */
+    }
+}
