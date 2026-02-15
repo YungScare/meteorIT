@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/about.css">
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/web.css">
+	<link rel="stylesheet" href="css/globe.css">
 </head>
 <body>
 	<div class="preloader">
@@ -87,7 +88,13 @@
 						<li><a href="#stages">путь до реализации</a></li>
 					</ul>
 				</nav>
-				<img src="img/web/globe.png" alt="Глобус" class="web-hero-globe">
+				<!-- <img src="img/web/globe.png" alt="Глобус" class="web-hero-globe"> -->
+				 <!-- 3D Wireframe Globe -->
+				<!-- 3D Wireframe Globe -->
+				<div class="web-hero-globe" id="web-hero-globe">
+					<div class="globe-loading">Загрузка 3D глобуса...</div>
+					<div class="globe-container"></div>
+				</div>
 			</section>
 
 			<section id="tasks" class="web-tasks">
@@ -340,5 +347,8 @@
 	<script src="js/header.js" defer></script>
 	<script src="js/modal.js" defer></script>
 	<script src="js/web-effects.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+	<script src="js/globe.js" defer></script>
+</head>
 </body>
 </html> 
