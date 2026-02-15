@@ -25,6 +25,7 @@
     justify-content: center;
     margin: 5% auto; /* для вертикального центрирования */
     top: 5%; /* дополнительное смещение для точного центрирования */
+    transform: rotateZ(15deg);
 }
 
 .globe-loading {
